@@ -430,5 +430,7 @@ const uzTranslations = Object.freeze({
   "Воронка заявок":"Arizalar voronkasi",
   "Квалификация":"Saralash",
   "КП":"Taklif",
-  "Договор":"Shartnoma"
+  "Договор":"Shartnoma",
+  "Платформа управления продуктовым минимаркетом с ориентацией на Узбекистан. Первый этап — запуск для одного и многоточечных магазинов.":"O‘zbekiston bozoriga mo‘ljallangan oziq-ovqat minimarketini boshqarish platformasi. Birinchi bosqich — bitta do‘kon va ko‘p filialli do‘konlar uchun ishga tushirish.",
+  "Первый этап — рабочая система для одного и многоточечных магазинов.":"Birinchi bosqich — bitta do‘kon va ko‘p filialli do‘konlar uchun ishlaydigan tizim."
 });

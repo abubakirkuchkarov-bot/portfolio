@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>AK — Abu-Bakir Kuchkarov</title>
+  <rect width="64" height="64" rx="14" fill="#0E1311"/>
+  <rect x="4.5" y="4.5" width="55" height="55" rx="10" fill="none" stroke="#E9E6DC" stroke-opacity=".14"/>
+  <g fill="none" stroke="#F1EEE6" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M11 49 L23 15 L35 49"/>
+    <path d="M41 15 V49"/>
+    <path d="M41 37 L54 15"/>
+    <path d="M46.2 28.2 L54.5 49"/>
+  </g>
+  <path d="M15.2 37 H41" stroke="#CDEB6A" stroke-width="4" stroke-linecap="butt"/>
+</svg>

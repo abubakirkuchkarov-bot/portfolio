@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0e1311" />
-  <meta name="description" content="Абу-Бакир Кучкаров — основатель VERIUM, предприниматель и AI-разработчик. Ремонт квартир и домов, строительство, CRM, веб-платформы и автоматизация." />
+  <meta name="description" content="Абу-Бакир Кучкаров — основатель VERIUM, предприниматель и AI-разработчик. Ремонт и строительство, продажи и управление, аналитика, QR-системы, CRM, веб-платформы и автоматизация." />
   <title>Абу-Бакир Кучкаров — Digital Systems & Business</title>
   <link rel="icon" type="image/svg+xml" href="assets/ak-mark.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -101,7 +101,7 @@
 
     /* ---------- Trust strip ---------- */
     .trust{background:var(--bone);border-bottom:1px solid var(--line)}
-    .trust-inner{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:0;align-items:stretch}
+    .trust-inner{display:grid;grid-template-columns:1.3fr repeat(4,1fr);gap:0;align-items:stretch}
     .trust-inner>div{padding:34px 30px;border-left:1px solid var(--line)}
     .trust-inner>div:first-child{border-left:0;padding-left:0}
     .trust-lead{font-size:13.5px;line-height:1.75;color:var(--muted)}
@@ -342,6 +342,172 @@
     #modalLink[hidden]{display:none}
     .no-scroll{overflow:hidden}
 
+
+    /* ---------- Solutions ---------- */
+    .solutions{background:var(--paper);position:relative;overflow:hidden}
+    .pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:clamp(40px,5vw,72px)}
+    .pillar{position:relative;padding:26px 24px 28px;border-radius:20px;background:var(--bone);border:1px solid var(--line);overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .4s}
+    .pillar::after{content:"";position:absolute;inset:auto -30% -60% auto;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(205,235,106,.55),transparent);opacity:0;transition:opacity .5s}
+    .pillar:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(20,24,21,.35);border-color:transparent}
+    .pillar:hover::after{opacity:1}
+    .pillar-num{font:500 10.5px var(--mono);letter-spacing:.12em;color:var(--sage)}
+    .pillar-icon{display:block;width:44px;height:44px;margin:26px 0 22px;fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    .pillar h3{margin:0 0 8px;font-size:22px;letter-spacing:-.035em}
+    .pillar p{margin:0;font-size:13.5px;line-height:1.7;color:var(--muted)}
+
+    .explorer{border-radius:28px;background:var(--ink);color:#f1eee6;padding:clamp(22px,3vw,40px);box-shadow:0 50px 100px -50px rgba(14,19,17,.6)}
+    .explorer-top{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+    .explorer-label{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+    .explorer-tabs{display:flex;flex-wrap:wrap;gap:6px;padding:5px;border-radius:40px;background:rgba(241,238,230,.06);border:1px solid var(--line-dark)}
+    .explorer-tabs button{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border:0;border-radius:30px;background:transparent;color:#c9cec3;font-size:12.5px;font-weight:700;transition:background .3s,color .3s}
+    .explorer-tabs button:hover{color:#fff}
+    .explorer-tabs button[aria-selected="true"]{background:var(--lime);color:var(--ink)}
+    .tab-ico{font-size:13px;opacity:.8}
+    .explorer-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,60px);align-items:stretch}
+    .ex-copy h3{margin:0 0 22px;font-size:clamp(28px,3vw,44px);letter-spacing:-.045em;line-height:1.05}
+    .ex-cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .ex-copy h4{margin:0 0 10px;font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#9da397}
+    .ex-list{margin:0;padding:0;list-style:none}
+    .ex-list li{position:relative;padding:10px 0 10px 22px;border-top:1px solid var(--line-dark);font-size:13.5px;line-height:1.55;color:#d9ddd3}
+    .ex-problems li::before{content:"–";position:absolute;left:2px;top:10px;color:#e0806a;font-weight:800}
+    .ex-solutions li::before{content:"";position:absolute;left:2px;top:17px;width:9px;height:9px;border-radius:3px;background:var(--lime)}
+    .ex-metrics{margin-top:22px}
+    .ex-chips{display:flex;flex-wrap:wrap;gap:8px}
+    .ex-chips span{padding:8px 13px;border-radius:30px;border:1px solid rgba(205,235,106,.35);color:var(--lime);font-size:12px;font-weight:700}
+    .ex-dash{border-radius:20px;background:linear-gradient(160deg,#1a221d,#121815);border:1px solid var(--line-dark);padding:20px 20px 16px;display:flex;flex-direction:column;min-height:360px}
+    .dash-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+    .dash-title{font-size:14px;font-weight:700}
+    .dash-tag{font:500 9.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#8d9488;padding:5px 9px;border-radius:20px;border:1px solid var(--line-dark);white-space:nowrap}
+    .ex-chart{width:100%;flex:1;min-height:240px;overflow:visible}
+    .ex-chart text{font:500 11px var(--mono);fill:#8d9488}
+    .ex-chart .grid-l{stroke:rgba(241,238,230,.07)}
+    .ex-chart .val{font:700 11px var(--sans);fill:#f1eee6}
+    .dash-legend{display:flex;gap:16px;font:500 10.5px var(--mono);color:#a7ada3;margin-top:6px}
+    .dash-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+
+    .sales{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,100px);align-items:center;margin-top:clamp(70px,9vw,130px)}
+    .sales-title{margin:0 0 16px;font-size:clamp(32px,3.8vw,58px);letter-spacing:-.05em;line-height:1.04}
+    .sales-title em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--sage);letter-spacing:-.02em;font-size:1.06em}
+    .sales-lead{margin:0 0 26px;color:var(--muted);font-size:15px;line-height:1.8;max-width:520px}
+    .sales-steps{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+    .sales-steps li{display:grid;grid-template-columns:46px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+    .sales-steps b{font:500 11px var(--mono);color:var(--sage);padding-top:4px}
+    .sales-steps h4{margin:0 0 4px;font-size:17px;letter-spacing:-.02em}
+    .sales-steps p{margin:0;font-size:13.5px;line-height:1.65;color:var(--muted)}
+    .funnel{border-radius:26px;background:var(--bone);border:1px solid var(--line);padding:clamp(22px,3vw,36px);box-shadow:0 40px 80px -50px rgba(20,24,21,.4)}
+    .funnel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;font:500 10.5px var(--mono);letter-spacing:.14em;color:var(--sage)}
+    .funnel .dash-tag{color:#7c7f75;border-color:var(--line)}
+    .f-row{display:grid;grid-template-columns:132px 1fr 48px;gap:14px;align-items:center;padding:9px 0}
+    .f-label{font-size:13px;font-weight:700}
+    .f-track{height:34px;border-radius:10px;background:var(--sand);overflow:hidden;display:block}
+    .f-track i{display:block;height:100%;width:var(--w);border-radius:10px;background:linear-gradient(90deg,#1c2a20,#4f6b3a 60%,#9cc23f);transform-origin:left}
+    .f-row:nth-child(3) .f-track i{background:linear-gradient(90deg,#1c2a20,#5b7a3c 60%,#b4d655)}
+    .f-row:nth-child(n+4) .f-track i{background:linear-gradient(90deg,#2b3a22,#8cb33a,#cdeb6a)}
+    .f-val{font:600 12px var(--mono);text-align:right}
+    .funnel-foot{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+    .funnel-foot span{font:500 10.5px var(--mono);padding:6px 10px;border-radius:20px;background:var(--ink);color:#f1eee6}
+
+    .ideas{margin-top:clamp(70px,9vw,120px)}
+    .ideas-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+    .ideas-head p{margin:0;color:var(--muted);font-size:14px;max-width:420px}
+    .ideas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .idea{position:relative;padding:28px;border-radius:22px;background:linear-gradient(150deg,#e9f5c4,#dfe9cf 55%,#efe9dc);border:1px solid #d6dfc0;overflow:hidden;transition:transform .5s var(--ease)}
+    .idea:nth-child(2){background:linear-gradient(150deg,#1a221d,#0e1311);color:#f1eee6;border-color:transparent}
+    .idea:nth-child(2) p{color:#b9beb4}
+    .idea:nth-child(3){background:linear-gradient(150deg,#f3dfc2,#ead9c5 60%,#f2efe8);border-color:#e5d3b6}
+    .idea:hover{transform:translateY(-6px) rotate(-.4deg)}
+    .idea-ico{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:rgba(14,19,17,.9);color:var(--lime);font-size:18px;margin-bottom:34px}
+    .idea:nth-child(2) .idea-ico{background:var(--lime);color:var(--ink)}
+    .idea h4{margin:0 0 8px;font-size:20px;letter-spacing:-.03em}
+    .idea p{margin:0;font-size:13.5px;line-height:1.7;color:#4f544b}
+
+    /* ---------- QR ---------- */
+    .qr{background:linear-gradient(180deg,var(--bone),#eef2e4 60%,var(--bone));overflow:clip}
+    .qr-story{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,6vw,110px);align-items:start}
+    .qr-stage{position:sticky;top:110px;display:flex;flex-direction:column;align-items:center;gap:20px}
+    .phone{position:relative;width:min(300px,78vw);aspect-ratio:300/610;border-radius:46px;background:#0e1311;padding:11px;box-shadow:0 60px 100px -40px rgba(14,19,17,.6),inset 0 0 0 1.5px #2e3832}
+    .phone::before{content:"";position:absolute;inset:-14% -30%;z-index:-1;background:radial-gradient(closest-side,rgba(205,235,106,.45),transparent 70%);filter:blur(10px)}
+    .phone-notch{position:absolute;z-index:3;top:20px;left:50%;width:84px;height:24px;margin-left:-42px;border-radius:20px;background:#0e1311}
+    .screens{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#faf8f3}
+    .screen{position:absolute;inset:0;padding:54px 18px 18px;display:flex;flex-direction:column;gap:10px;opacity:0;visibility:hidden;transform:translateY(16px) scale(.98);transition:opacity .55s var(--ease),transform .55s var(--ease),visibility .55s;font-size:12px;color:#141815}
+    .screen.is-active{opacity:1;visibility:visible;transform:none}
+    .scr-top{display:flex;justify-content:space-between;align-items:center;font:600 9.5px var(--mono);letter-spacing:.12em;color:#6b6f67;padding-bottom:8px;border-bottom:1px solid rgba(20,24,21,.08)}
+    .s-scan{background:#101512;color:#f1eee6}.s-scan .scr-top{color:#a7ada3;border-color:rgba(255,255,255,.08)}
+    .scan-frame{position:relative;margin:30px auto 0;width:78%;aspect-ratio:1;border-radius:18px;display:grid;place-items:center}
+    .scan-qr{width:72%;aspect-ratio:1;border-radius:8px;background:#fff;background-image:linear-gradient(90deg,#0e1311 0 25%,transparent 25% 50%,#0e1311 50% 62%,transparent 62%),linear-gradient(#0e1311 0 18%,transparent 18% 40%,#0e1311 40% 55%,transparent 55% 72%,#0e1311 72%);background-blend-mode:multiply;background-size:24% 24%,24% 24%;box-shadow:0 0 0 8px #fff}
+    .scan-line{position:absolute;left:6%;right:6%;top:10%;height:2px;background:var(--lime);box-shadow:0 0 18px 4px rgba(205,235,106,.7)}
+    .corner{position:absolute;width:24px;height:24px;border:3px solid var(--lime)}
+    .c1{top:0;left:0;border-right:0;border-bottom:0;border-radius:10px 0 0 0}.c2{top:0;right:0;border-left:0;border-bottom:0;border-radius:0 10px 0 0}.c3{bottom:0;left:0;border-right:0;border-top:0;border-radius:0 0 0 10px}.c4{bottom:0;right:0;border-left:0;border-top:0;border-radius:0 0 10px 0}
+    .scan-toast{margin:auto auto 14px;padding:10px 14px;border-radius:14px;background:rgba(241,238,230,.12);font:600 11px var(--mono)}
+    .lang-mini b{color:#141815}
+    .menu-tabs{display:flex;gap:6px}.menu-tabs span{padding:6px 11px;border-radius:20px;background:rgba(20,24,21,.06);font-weight:700;font-size:11px}.menu-tabs .on{background:#141815;color:#fff}
+    .dish{display:grid;grid-template-columns:48px 1fr 30px;gap:10px;align-items:center;padding:6px;border-radius:14px;background:#fff;box-shadow:0 4px 14px rgba(20,24,21,.06)}
+    .dish b{display:block;font-size:13px}.dish small{font:600 11px var(--mono);color:#6b6f67}
+    .dish-img{width:48px;height:48px;border-radius:11px;display:block}
+    .d1{background:radial-gradient(circle at 40% 40%,#f4c27a,#c2702c 60%,#7a3e14)}.d2{background:radial-gradient(circle at 40% 40%,#f7d9a0,#d4893a 55%,#8a4a1e)}.d3{background:radial-gradient(circle at 40% 40%,#f8e1b0,#e0a64e 60%,#a8641e)}.d4{background:radial-gradient(circle at 50% 50%,#e7b866,#a35b14 60%,#5e300a)}
+    .add{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--lime);font-weight:800}
+    .o-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed rgba(20,24,21,.14);font-weight:600}
+    .o-note{padding:9px 11px;border-radius:12px;background:rgba(20,24,21,.05);font-style:italic;color:#555a52}
+    .o-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:auto}.o-total b{font-size:24px;letter-spacing:-.04em}
+    .o-btn{padding:14px;border-radius:16px;background:#141815;color:#fff;text-align:center;font-weight:800}
+    .s-kitchen{background:#141a17;color:#f1eee6}.s-kitchen .scr-top{color:#a7ada3;border-color:rgba(255,255,255,.08)}
+    .live-dot{color:#7ddc6a}.live-dot::before{content:"● "}
+    .ticket{position:relative;padding:12px 12px 12px 14px;border-radius:14px;background:rgba(241,238,230,.06);border:1px solid rgba(241,238,230,.08);display:flex;flex-direction:column;gap:4px}
+    .ticket b{font-size:13px}.ticket span{font-size:11.5px;color:#a7ada3}
+    .ticket em{position:absolute;right:10px;top:10px;font:700 8.5px var(--mono);letter-spacing:.1em;font-style:normal;padding:3px 7px;border-radius:10px;background:rgba(241,238,230,.1)}
+    .ticket.new{border-color:var(--lime);background:rgba(205,235,106,.1)}.ticket.new em{background:var(--lime);color:var(--ink)}
+    .tg-pill{margin-top:auto;padding:11px;border-radius:14px;background:#2a9fd6;color:#fff;text-align:center;font-weight:700;font-size:11.5px}
+    .ring{width:62%;margin:26px auto 10px;transform:rotate(-90deg)}
+    .ring circle{fill:none;stroke:rgba(20,24,21,.08);stroke-width:10}
+    .ring .ring-p{stroke:#8cb33a;stroke-linecap:round;stroke-dasharray:314;stroke-dashoffset:120}
+    .st-steps{display:flex;flex-direction:column;gap:8px}
+    .st-steps span{padding:11px 14px;border-radius:14px;background:rgba(20,24,21,.05);font-weight:700;color:#8b8f86}
+    .st-steps .done{background:#e7f2cf;color:#3d5a14}.st-steps .done::after{content:"  ✓"}
+    .st-steps .on{background:#141815;color:#fff}.st-steps .on::after{content:"  ●";color:var(--lime)}
+    .pay-sum{margin:24px 0 6px;font-size:34px;font-weight:800;letter-spacing:-.05em;text-align:center}.pay-sum small{font-size:13px;color:#6b6f67}
+    .pay-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.pay-btns span{padding:11px 0;text-align:center;border-radius:12px;border:1px solid rgba(20,24,21,.12);font-weight:700;font-size:11px}.pay-btns .on{background:#141815;color:#fff;border-color:#141815}
+    .stars{margin-top:18px;text-align:center;font-size:30px;letter-spacing:6px;color:#f2b632}
+    .pay-thanks{text-align:center;font-weight:700;color:#4f6b3a}
+    .qr-progress{display:flex;gap:6px}.qr-progress i{width:22px;height:4px;border-radius:4px;background:rgba(20,24,21,.15);transition:background .4s,width .4s}
+    .qr-progress i.on{background:var(--ink);width:40px}
+    .qr-steps{margin:0;padding:0;list-style:none}
+    .qr-step{display:grid;grid-template-columns:64px 1fr;gap:18px;min-height:min(62vh,520px);align-items:center;opacity:.32;transition:opacity .5s var(--ease)}
+    .qr-step.is-active{opacity:1}
+    .qr-step .n{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;border:1.5px solid var(--ink);font:500 12px var(--mono);transition:background .4s,color .4s}
+    .qr-step.is-active .n{background:var(--ink);color:var(--lime)}
+    .qr-step h3{margin:0 0 8px;font-size:clamp(28px,3.2vw,48px);letter-spacing:-.045em;line-height:1}
+    .qr-step p{margin:0;max-width:440px;font-size:15.5px;line-height:1.75;color:var(--muted)}
+    .qr-types{margin-top:clamp(60px,8vw,110px)}
+    .qr-types-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+    .qr-types-title{margin:0;font-size:clamp(32px,3.8vw,58px);letter-spacing:-.05em;line-height:1.04}
+    .qr-types-title em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--sage);letter-spacing:-.02em;font-size:1.06em}
+    .qr-types-head p{margin:0;color:var(--muted);max-width:420px;font-size:14px}
+    .qr-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .qr-tile{position:relative;padding:22px 20px;border-radius:18px;background:#fff;border:1px solid var(--line);transition:transform .45s var(--ease),background .45s,color .45s,box-shadow .45s;overflow:hidden}
+    .qr-tile:hover{transform:translateY(-5px);background:var(--ink);color:#f1eee6;box-shadow:0 30px 50px -30px rgba(14,19,17,.6)}
+    .qr-tile:hover p{color:#a7ada3}.qr-tile:hover .qt-ico{background:var(--lime);color:var(--ink)}
+    .qt-ico{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--sand);font-size:17px;margin-bottom:18px;transition:background .45s,color .45s}
+    .qr-tile h4{margin:0 0 5px;font-size:16px;letter-spacing:-.02em}
+    .qr-tile p{margin:0;font-size:12.5px;line-height:1.6;color:var(--muted);transition:color .45s}
+    .qr-live{grid-column:1/-1;display:flex;align-items:center;gap:26px;background:var(--ink);color:#f1eee6;padding:22px 26px}
+    .qr-live:hover{transform:none}
+    .qr-live h4{font-size:clamp(22px,2.4vw,34px);letter-spacing:-.04em}
+    .qr-live p{color:#a7ada3;font-size:14px}
+    .qr-real{width:120px;height:120px;flex-shrink:0;border-radius:12px;display:block}
+    .tg-card{display:flex;align-items:center;gap:14px;margin-top:16px;padding:10px 16px 10px 10px;border-radius:18px;border:1px solid var(--line-dark);background:rgba(241,238,230,.04);transition:border-color .3s,background .3s}
+    .tg-card:hover{border-color:var(--lime);background:rgba(205,235,106,.06)}
+    .qr-small{width:76px;height:76px;border-radius:10px}
+    .tg-card b{display:block;font:600 14px var(--mono);color:#f1eee6}.tg-card small{display:block;margin-top:4px;font-size:12px;color:#9da397}
+
+    /* Rulexx cover */
+    .p-rulexx .cover{--tone:120,52,8;background:radial-gradient(90% 80% at 85% 10%,#ffcf6b 0%,transparent 55%),radial-gradient(120% 100% at 0% 100%,#3a1702 0%,transparent 60%),linear-gradient(140deg,#e2861f,#9b4307 60%,#4a1e03)}
+    .p-rulexx .cover::before{background:linear-gradient(180deg,rgba(30,10,0,.3),transparent 35%),repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 22px)}
+    .oil{position:absolute;left:7%;bottom:22%;width:min(30%,170px);height:auto;z-index:0;filter:drop-shadow(0 30px 40px rgba(60,20,0,.5))}
+    .in-view .oil-wave{animation:oilwave 6s linear infinite}
+    @keyframes oilwave{to{transform:translateX(100px)}}
+    .p-rulexx .ui{top:16%}
+    .work-grid .project.span-12.p-estimate .ui{width:min(36%,380px)}
+
     /* ---------- Motion gating ---------- */
     .motion [data-hero],.motion [data-hero-line]{visibility:hidden}
 
@@ -350,7 +516,10 @@
       .nav{gap:20px}.nav-cta{display:none}
       .project.span-7,.project.span-5{grid-column:span 6}
       .project.span-4{grid-column:span 6}
-      .project.span-4:last-child{grid-column:span 12}
+      .pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .qr-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .explorer-panel{grid-template-columns:1fr}
+      .nav{gap:16px;font-size:12.5px}
       .hero-badges{display:none}
     }
     @media (max-width:900px){
@@ -365,10 +534,18 @@
       .hero-scene{position:relative;right:auto;width:100%;height:min(80vw,420px);mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);order:2}
       .hero{display:flex;flex-direction:column}
       .hero-bottom{order:3}
-      .trust-inner{grid-template-columns:repeat(3,1fr)}
+      .trust-inner{grid-template-columns:repeat(2,1fr)}
+      .trust-inner>.trust-stat{border-top:1px solid var(--line)}
+      .work-grid .project.p-print{grid-column:span 12}
+      .sales{grid-template-columns:1fr}
+      .qr-story{grid-template-columns:1fr}
+      .qr-stage{position:relative;top:auto}
+      .qr-step{min-height:auto;padding:18px 0;opacity:1;border-top:1px solid var(--line)}
+      .qr-step h3{font-size:26px}
+      .ideas-grid{grid-template-columns:1fr}
       .trust-inner>.trust-lead{grid-column:1/-1;border-left:0;padding:28px 0 0}
       .trust-inner>.trust-stat{padding:24px 18px}
-      .trust-inner>.trust-stat:nth-child(2){border-left:0;padding-left:0}
+      .trust-inner>.trust-stat:nth-child(2),.trust-inner>.trust-stat:nth-child(4){border-left:0;padding-left:0}
       .section-head{grid-template-columns:1fr;gap:18px}
       .verium-layout,.approach-grid,.bio-layout{grid-template-columns:1fr}
       .cap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -398,6 +575,20 @@
       .cover,.span-12 .cover,.span-4 .cover{height:380px}
       .ui,.span-4 .ui,.span-5 .ui{width:auto;left:20px;right:20px;top:54px}
       .pos-stock{display:none}
+      .pillars{grid-template-columns:1fr}
+      .qr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .qr-live{flex-direction:column;align-items:flex-start}
+      .ex-cols{grid-template-columns:1fr}
+      .explorer{border-radius:22px;margin:0 -8px}
+      .explorer-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;border-radius:20px;max-width:100%}
+      .explorer-tabs button{flex-shrink:0}
+      .explorer-top{flex-direction:column;align-items:flex-start}
+      .f-row{grid-template-columns:96px 1fr 40px;gap:10px}
+      .f-label{font-size:11.5px}
+      .oil{display:none}
+      .ex-dash{min-height:300px;padding:16px 12px}
+      .dash-head{flex-wrap:wrap}
+      .qr-tile{padding:18px 16px}
       .p-retail .cover{height:440px}.p-retail .pos-scan{height:22px}.p-retail .pos-item{padding:5px 0}
       .cover-title{font-size:38px!important;bottom:18px;left:20px}
       .cover-index{left:20px;top:20px}
@@ -422,7 +613,7 @@
   <header class="top" id="top">
     <div class="shell top-inner">
       <a href="#main" class="logo" aria-label="Абу-Бакир Кучкаров — наверх"><span class="logo-icon"><img src="assets/ak-mark.svg" alt="" width="40" height="40" /></span><span class="logo-name">ABU-BAKIR KUCHKAROV<span class="logo-caption">DIGITAL SYSTEMS / TASHKENT</span></span></a>
-      <nav class="nav" id="nav" aria-label="Основная навигация"><a href="#verium">VERIUM</a><a href="#expertise">Компетенции</a><a href="#projects">Проекты</a><a href="#approach">Подход</a><a href="#about">Обо мне</a></nav>
+      <nav class="nav" id="nav" aria-label="Основная навигация"><a href="#verium">VERIUM</a><a href="#expertise">Компетенции</a><a href="#solutions">Решения</a><a href="#qr">QR</a><a href="#projects">Проекты</a><a href="#approach">Подход</a><a href="#about">Обо мне</a></nav>
       <div class="lang-control" role="group" aria-label="Язык сайта / Sayt tili"><button type="button" data-lang="ru" lang="ru" aria-label="Русский" aria-pressed="true">RU</button><button type="button" data-lang="uz" lang="uz" aria-label="O‘zbekcha" aria-pressed="false">UZ</button></div>
       <a class="nav-cta" href="#contact">Обсудить проект <span aria-hidden="true">↗</span></a>
       <button class="menu-button" id="menuButton" type="button" aria-controls="nav" aria-expanded="false" aria-label="Открыть меню"><span></span></button>
@@ -452,6 +643,7 @@
       <div class="trust-lead reveal"><b>На пересечении бизнеса и технологий</b>Знаю операционные процессы изнутри и превращаю идеи в цифровые инструменты.</div>
       <div class="trust-stat reveal"><strong>5–7</strong><small>лет опыта в торговле<br />и управлении</small></div>
       <div class="trust-stat reveal"><strong>AI + Web</strong><small>разработка цифровых<br />решений</small></div>
+      <div class="trust-stat reveal"><strong>Rulexx</strong><small>региональный менеджер<br />в Узбекистане</small></div>
       <div class="trust-stat reveal"><strong>RU / UZ</strong><small>коммуникация и работа<br />с локальным рынком</small></div>
     </div></div>
 
@@ -482,18 +674,173 @@
         <article class="cap reveal"><div class="cap-top"><span>01 / AI SYSTEMS</span><span class="cap-icon" aria-hidden="true">✳</span></div><h3>AI-агенты и ассистенты</h3><p>Сценарии консультаций, обработки обращений, работы с документами и передачи задач человеку.</p></article>
         <article class="cap reveal"><div class="cap-top"><span>02 / OPERATIONS</span><span class="cap-icon" aria-hidden="true">◇</span></div><h3>CRM и бизнес-системы</h3><p>Воронки продаж, задачи, статусы, согласования, управленческие панели и архитектура процессов.</p></article>
         <article class="cap reveal"><div class="cap-top"><span>03 / PRODUCT</span><span class="cap-icon" aria-hidden="true">▣</span></div><h3>Сайты и веб-приложения</h3><p>От эстетичных лендингов до интерактивных кабинетов, каталогов и полноценных веб-продуктов.</p></article>
-        <article class="cap reveal"><div class="cap-top"><span>04 / MESSAGING</span><span class="cap-icon" aria-hidden="true">↗</span></div><h3>Telegram-боты</h3><p>Заявки, уведомления, запись, маршрутизация обращений и интеграции с рабочими системами.</p></article>
+        <article class="cap reveal"><div class="cap-top"><span>04 / MESSAGING</span><span class="cap-icon" aria-hidden="true">✈</span></div><h3>Telegram-боты</h3><p>Заявки, уведомления, запись, маршрутизация обращений и интеграции с рабочими системами.</p></article>
         <article class="cap reveal"><div class="cap-top"><span>05 / AUTOMATION</span><span class="cap-icon" aria-hidden="true">⌁</span></div><h3>Автоматизация процессов</h3><p>Убираю рутинные действия из ежедневной работы — от первичного контакта до отчётности.</p></article>
         <article class="cap reveal"><div class="cap-top"><span>06 / STRATEGY</span><span class="cap-icon" aria-hidden="true">◎</span></div><h3>Product & AI Strategy</h3><p>Формирую концепцию продукта, пользовательские сценарии, прототипы и план развития системы.</p></article>
+        <article class="cap reveal"><div class="cap-top"><span>07 / SALES</span><span class="cap-icon" aria-hidden="true">↗</span></div><h3>Продажи и отдел продаж</h3><p>Выстраиваю отдел продаж с нуля: воронка, скрипты, роли, планы, CRM и ежедневный контроль.</p></article>
+        <article class="cap reveal"><div class="cap-top"><span>08 / ANALYTICS</span><span class="cap-icon" aria-hidden="true">◫</span></div><h3>Аналитика и оптимизация</h3><p>Нахожу, где бизнес теряет деньги и время: цифры, отчёты, дашборды и понятные решения.</p></article>
+        <article class="cap reveal"><div class="cap-top"><span>09 / QR SYSTEMS</span><span class="cap-icon" aria-hidden="true">▦</span></div><h3>QR-решения</h3><p>От QR-меню и заказа к столу до QR-оплаты, отзывов, каталогов и сервисной истории.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section solutions" id="solutions"><div class="shell">
+      <div class="section-head"><div><div class="kicker reveal">02 / Решения для бизнеса</div><h2 class="h2 reveal">Решаю задачи бизнеса <em>любой сферы.</em></h2></div><p class="section-side reveal">Помогаю владельцам навести порядок в продажах, управлении и цифрах — и подкрепляю это инструментами: CRM, ботами, QR и аналитикой.</p></div>
+
+      <div class="pillars">
+        <article class="pillar reveal"><span class="pillar-num">01</span><svg class="pillar-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 38 L18 24 L26 30 L42 12" /><path d="M32 12 H42 V22" /></svg><h3>Продажи</h3><p>Построение отдела продаж, воронка, скрипты, обучение и KPI менеджеров.</p></article>
+        <article class="pillar reveal"><span class="pillar-num">02</span><svg class="pillar-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="8" width="14" height="14" rx="3"/><rect x="28" y="8" width="14" height="14" rx="3"/><rect x="17" y="28" width="14" height="14" rx="3"/><path d="M13 22 V25 H35 V22 M24 25 V28"/></svg><h3>Управление</h3><p>Роли, регламенты, задачи и контроль — чтобы бизнес работал без ручного хаоса.</p></article>
+        <article class="pillar reveal"><span class="pillar-num">03</span><svg class="pillar-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40 V26 M18 40 V16 M28 40 V22 M38 40 V8"/><path d="M4 42 H44"/></svg><h3>Аналитика</h3><p>Дашборды и отчёты: выручка, средний чек, маржа, остатки, загрузка — в одном окне.</p></article>
+        <article class="pillar reveal"><span class="pillar-num">04</span><svg class="pillar-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M24 14 V24 L31 29"/><path d="M40 8 L44 4 M4 44 L8 40"/></svg><h3>Оптимизация</h3><p>Убираю лишние шаги, потери и простои, автоматизирую рутину.</p></article>
+      </div>
+
+      <div class="explorer">
+        <div class="explorer-top"><span class="explorer-label">Сферы бизнеса</span>
+          <div class="explorer-tabs" role="tablist" aria-label="Сферы бизнеса">
+            <button type="button" role="tab" id="tab-sto" aria-controls="explorerPanel" aria-selected="true" data-industry="sto"><span class="tab-ico" aria-hidden="true">⚙</span>СТО</button>
+            <button type="button" role="tab" id="tab-shop" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="shop"><span class="tab-ico" aria-hidden="true">▤</span>Магазины</button>
+            <button type="button" role="tab" id="tab-cafe" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="cafe"><span class="tab-ico" aria-hidden="true">☕</span>Кафе и рестораны</button>
+            <button type="button" role="tab" id="tab-dist" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="dist"><span class="tab-ico" aria-hidden="true">⛟</span>Дистрибуция</button>
+            <button type="button" role="tab" id="tab-service" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="service"><span class="tab-ico" aria-hidden="true">◎</span>Услуги и офис</button>
+          </div>
+        </div>
+        <div class="explorer-panel" id="explorerPanel" role="tabpanel" aria-labelledby="tab-sto">
+          <div class="ex-copy">
+            <h3 id="exTitle">СТО и автосервис</h3>
+            <div class="ex-cols">
+              <div><h4>Типичные проблемы</h4><ul class="ex-list ex-problems" id="exProblems"></ul></div>
+              <div><h4>Что внедряю</h4><ul class="ex-list ex-solutions" id="exSolutions"></ul></div>
+            </div>
+            <div class="ex-metrics"><h4>Что видит владелец</h4><div class="ex-chips" id="exMetrics"></div></div>
+          </div>
+          <div class="ex-dash">
+            <div class="dash-head"><span class="dash-title" id="exChartTitle"></span><span class="dash-tag">Пример дашборда · демо-данные</span></div>
+            <svg class="ex-chart" id="exChart" viewBox="0 0 520 280" role="img" aria-labelledby="exChartTitle"></svg>
+            <div class="dash-legend" id="exLegend"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sales">
+        <div class="sales-copy">
+          <h3 class="sales-title reveal">Отдел продаж — <em>как система.</em></h3>
+          <p class="sales-lead reveal">Опыт в торговле и региональных продажах превращаю в понятную систему: люди, этапы, цифры и контроль.</p>
+          <ol class="sales-steps">
+            <li class="reveal"><b>01</b><div><h4>Аудит</h4><p>Разбираю текущие продажи, клиентов, цифры и узкие места.</p></div></li>
+            <li class="reveal"><b>02</b><div><h4>Воронка и скрипты</h4><p>Этапы сделки, скрипты, ответы на возражения и стандарты.</p></div></li>
+            <li class="reveal"><b>03</b><div><h4>Команда и роли</h4><p>Роли менеджеров, планы, мотивация и обучение.</p></div></li>
+            <li class="reveal"><b>04</b><div><h4>CRM и контроль</h4><p>Все сделки в CRM, ежедневные отчёты и контроль активности.</p></div></li>
+            <li class="reveal"><b>05</b><div><h4>Аналитика и рост</h4><p>Конверсии по этапам, план/факт и регулярные улучшения.</p></div></li>
+          </ol>
+        </div>
+        <div class="funnel reveal" role="img" aria-label="Пример воронки продаж">
+          <div class="funnel-head"><span>SALES FUNNEL</span><span class="dash-tag">Пример · демо-данные</span></div>
+          <div class="f-row"><span class="f-label">Заявки</span><span class="f-track"><i style="--w:100%"></i></span><span class="f-val">100%</span></div>
+          <div class="f-row"><span class="f-label">Контакт</span><span class="f-track"><i style="--w:74%"></i></span><span class="f-val">74%</span></div>
+          <div class="f-row"><span class="f-label">Встреча / КП</span><span class="f-track"><i style="--w:48%"></i></span><span class="f-val">48%</span></div>
+          <div class="f-row"><span class="f-label">Сделка</span><span class="f-track"><i style="--w:29%"></i></span><span class="f-val">29%</span></div>
+          <div class="f-row"><span class="f-label">Повторная продажа</span><span class="f-track"><i style="--w:21%"></i></span><span class="f-val">21%</span></div>
+          <div class="funnel-foot"><span>CRM</span><span>KPI</span><span>Plan / Fact</span><span>Telegram</span></div>
+        </div>
+      </div>
+
+      <div class="ideas">
+        <div class="ideas-head reveal"><span class="kicker">Идеи сверху</span><p>То, что я могу добавить в ваш бизнес сверх базовой автоматизации.</p></div>
+        <div class="ideas-grid">
+          <article class="idea reveal"><span class="idea-ico" aria-hidden="true">☀</span><h4>Утренний отчёт владельцу</h4><p>Каждое утро в Telegram: выручка, заказы, остатки и проблемы дня.</p></article>
+          <article class="idea reveal"><span class="idea-ico" aria-hidden="true">✳</span><h4>AI-помощник руководителя</h4><p>Спросите обычным языком: «что продавалось лучше всего на неделе?» — и получите ответ из ваших данных.</p></article>
+          <article class="idea reveal"><span class="idea-ico" aria-hidden="true">◔</span><h4>Прогноз закупок</h4><p>Подсказки, что и сколько заказать, на основе продаж и сезонности.</p></article>
+        </div>
+      </div>
+    </div></section>
+
+    <section class="section qr" id="qr"><div class="shell">
+      <div class="section-head"><div><div class="kicker reveal">03 / QR-системы</div><h2 class="h2 reveal">От QR-меню <em>до получения заказа.</em></h2></div><p class="section-side reveal">Гость сканирует QR — и дальше всё происходит в его телефоне: меню, заказ, кухня, статус, оплата и отзыв. Тот же подход работает для СТО, магазинов, отелей и сервиса.</p></div>
+
+      <div class="qr-story">
+        <div class="qr-stage">
+          <div class="phone" aria-hidden="true">
+            <div class="phone-notch"></div>
+            <div class="screens">
+              <div class="screen s-scan is-active" data-screen="1">
+                <div class="scr-top"><span>CAMERA</span><span>TABLE 7</span></div>
+                <div class="scan-frame"><div class="scan-qr"></div><i class="scan-line"></i><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span></div>
+                <div class="scan-toast">menu.cafe / table-7 ↗</div>
+              </div>
+              <div class="screen s-menu" data-screen="2">
+                <div class="scr-top"><span>MENU</span><span class="lang-mini"><b>RU</b> UZ</span></div>
+                <div class="menu-tabs"><span class="on">Hot</span><span>Salads</span><span>Drinks</span></div>
+                <div class="dish"><i class="dish-img d1"></i><div><b>Plov</b><small>45 000</small></div><span class="add">+</span></div>
+                <div class="dish"><i class="dish-img d2"></i><div><b>Lagman</b><small>38 000</small></div><span class="add">+</span></div>
+                <div class="dish"><i class="dish-img d3"></i><div><b>Somsa</b><small>12 000</small></div><span class="add">+</span></div>
+                <div class="dish"><i class="dish-img d4"></i><div><b>Choy</b><small>8 000</small></div><span class="add">+</span></div>
+              </div>
+              <div class="screen s-order" data-screen="3">
+                <div class="scr-top"><span>YOUR ORDER</span><span>TABLE 7</span></div>
+                <div class="o-row"><span>Plov × 1</span><span>45 000</span></div>
+                <div class="o-row"><span>Lagman × 1</span><span>38 000</span></div>
+                <div class="o-row"><span>Somsa × 1</span><span>12 000</span></div>
+                <div class="o-note">“Less spicy, please”</div>
+                <div class="o-total"><span>Total</span><b>95 000</b></div>
+                <div class="o-btn">Send order →</div>
+              </div>
+              <div class="screen s-kitchen" data-screen="4">
+                <div class="scr-top"><span>KITCHEN</span><span class="live-dot">LIVE</span></div>
+                <div class="ticket new"><b>#128 · Table 7</b><span>Plov · Lagman · Somsa</span><em>NEW</em></div>
+                <div class="ticket"><b>#127 · Table 3</b><span>Shashlik · Choy</span><em>COOKING</em></div>
+                <div class="ticket"><b>#126 · Takeaway</b><span>Somsa × 4</span><em>READY</em></div>
+                <div class="tg-pill">Telegram ✓ admin notified</div>
+              </div>
+              <div class="screen s-status" data-screen="5">
+                <div class="scr-top"><span>ORDER #128</span><span>~12 min</span></div>
+                <svg class="ring" viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"/><circle class="ring-p" cx="60" cy="60" r="50"/></svg>
+                <div class="st-steps"><span class="done">Accepted</span><span class="on">Cooking</span><span>Ready</span></div>
+              </div>
+              <div class="screen s-pay" data-screen="6">
+                <div class="scr-top"><span>BILL</span><span>TABLE 7</span></div>
+                <div class="pay-sum">95 000 <small>so‘m</small></div>
+                <div class="pay-btns"><span>Card</span><span class="on">QR Pay</span><span>Cash</span></div>
+                <div class="stars">★★★★★</div>
+                <div class="pay-thanks">Rahmat! Thank you!</div>
+              </div>
+            </div>
+          </div>
+          <div class="qr-progress" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <ol class="qr-steps">
+          <li class="qr-step is-active" data-step="1"><span class="n">01</span><div><h3>Сканирование</h3><p>Гость наводит камеру на QR на столе — без приложений и регистрации.</p></div></li>
+          <li class="qr-step" data-step="2"><span class="n">02</span><div><h3>Меню</h3><p>Красивое меню на русском и узбекском: фото, состав, цены и стоп-лист.</p></div></li>
+          <li class="qr-step" data-step="3"><span class="n">03</span><div><h3>Заказ</h3><p>Гость собирает заказ, добавляет комментарий и отправляет с номером стола.</p></div></li>
+          <li class="qr-step" data-step="4"><span class="n">04</span><div><h3>Кухня</h3><p>Заказ мгновенно приходит на кухню, бар или в Telegram администратору.</p></div></li>
+          <li class="qr-step" data-step="5"><span class="n">05</span><div><h3>Статус</h3><p>Гость видит: принят → готовится → готов. Официанту не нужно бегать с вопросами.</p></div></li>
+          <li class="qr-step" data-step="6"><span class="n">06</span><div><h3>Оплата и отзыв</h3><p>Счёт, оплата и короткий отзыв — владелец сразу получает обратную связь.</p></div></li>
+        </ol>
+      </div>
+
+      <div class="qr-types">
+        <div class="qr-types-head"><h3 class="qr-types-title reveal">Все виды QR <em>для бизнеса.</em></h3><p class="reveal">Один подход — десятки сценариев: от ресторана и СТО до склада и офиса.</p></div>
+        <div class="qr-grid">
+          <article class="qr-tile reveal"><span class="qt-ico" aria-hidden="true">▦</span><h4>QR-меню</h4><p>Меню на RU/UZ с фото и ценами</p></article>
+          <article class="qr-tile reveal"><span class="qt-ico" aria-hidden="true">⌖</span><h4>QR-заказ к столу</h4><p>Заказ с телефона гостя сразу на кухню</p></article>
+          <article class="qr-tile reveal"><span class="qt-ico" aria-hidden="true">◈</span><h4>QR-оплата</h4><p>Быстрая оплата счёта со стола или на кассе</p></article>
+          <article class="qr-tile reveal"><span class="qt-ico" aria-hidden="true">★</span><h4>QR-отзывы</h4><p>Сбор оценок и отзывов после визита</p></article>
+          <article class="qr-tile reveal"><span class="qt-ico" aria-hidden="true">☏</span><h4>QR-визитка</h4><p>Контакты и соцсети одним сканом</p></article>
+          <article class="qr-tile reveal"><span class="qt-ico" aria-hidden="true">▤</span><h4>QR-каталог</h4><p>Товары, наличие и цены в магазине</p></article>
+          <article class="qr-tile reveal"><span class="qt-ico" aria-hidden="true">⚙</span><h4>QR-статус ремонта</h4><p>Клиент СТО видит этап работ по своему авто</p></article>
+          <article class="qr-tile reveal"><span class="qt-ico" aria-hidden="true">⛽</span><h4>QR-история сервиса</h4><p>Сервисная книжка: ТО, масло, запчасти</p></article>
+          <article class="qr-tile reveal"><span class="qt-ico" aria-hidden="true">✓</span><h4>QR-гарантия</h4><p>Проверка покупки и гарантийного срока</p></article>
+          <article class="qr-tile reveal"><span class="qt-ico" aria-hidden="true">♥</span><h4>QR-лояльность</h4><p>Бонусы и скидки без пластиковых карт</p></article>
+          <article class="qr-tile reveal"><span class="qt-ico" aria-hidden="true">⬚</span><h4>QR-инвентаризация</h4><p>Учёт оборудования и товаров на складе</p></article>
+          <article class="qr-tile reveal"><span class="qt-ico" aria-hidden="true">☑</span><h4>QR-чек-листы</h4><p>Открытие смены, уборка и контроль персонала</p></article>
+          <article class="qr-tile qr-live reveal"><svg class="qr-real" viewBox="-2 -2 29 29" shape-rendering="crispEdges" role="img" aria-label="QR-код: Telegram @ministr_009"><rect x="-2" y="-2" width="29" height="29" rx="1.5" fill="#fff"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM10 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM11 1h1v1h-1zM13 1h1v1h-1zM16 1h1v1h-1zM18 1h1v1h-1zM24 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM9 3h1v1h-1zM12 3h1v1h-1zM13 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM21 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM14 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM9 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM14 5h1v1h-1zM18 5h1v1h-1zM24 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM11 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM0 8h1v1h-1zM6 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM13 8h1v1h-1zM14 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM21 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM0 9h1v1h-1zM1 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM7 9h1v1h-1zM9 9h1v1h-1zM10 9h1v1h-1zM11 9h1v1h-1zM12 9h1v1h-1zM15 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM0 10h1v1h-1zM1 10h1v1h-1zM2 10h1v1h-1zM4 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM13 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM17 10h1v1h-1zM21 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM0 11h1v1h-1zM1 11h1v1h-1zM2 11h1v1h-1zM3 11h1v1h-1zM7 11h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM24 11h1v1h-1zM0 12h1v1h-1zM2 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM11 12h1v1h-1zM13 12h1v1h-1zM16 12h1v1h-1zM18 12h1v1h-1zM24 12h1v1h-1zM0 13h1v1h-1zM1 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM19 13h1v1h-1zM23 13h1v1h-1zM0 14h1v1h-1zM4 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM23 14h1v1h-1zM24 14h1v1h-1zM0 15h1v1h-1zM2 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM9 15h1v1h-1zM12 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM24 15h1v1h-1zM0 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM9 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM8 17h1v1h-1zM10 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM20 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM24 18h1v1h-1zM0 19h1v1h-1zM6 19h1v1h-1zM11 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM20 19h1v1h-1zM24 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM9 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM12 21h1v1h-1zM15 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM10 22h1v1h-1zM16 22h1v1h-1zM21 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM12 23h1v1h-1zM16 23h1v1h-1zM17 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM24 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM16 24h1v1h-1zM18 24h1v1h-1zM21 24h1v1h-1zM24 24h1v1h-1z" fill="#0e1311"/></svg><div><h4>Это настоящий QR-код</h4><p>Наведите камеру — откроется мой Telegram.</p></div></article>
+        </div>
       </div>
     </div></section>
 
     <section class="section work" id="projects"><div class="shell">
-      <div class="section-head"><div><div class="kicker reveal">02 / Избранные работы</div><h2 class="h2 reveal">Идеи, воплощённые <em>в интерфейсах.</em></h2></div><p class="section-side reveal">Цифровые продукты, предпринимательство и строительство. Откройте карточку, чтобы увидеть идею, возможности и текущий статус.</p></div>
+      <div class="section-head"><div><div class="kicker reveal">04 / Избранные работы</div><h2 class="h2 reveal">Идеи, воплощённые <em>в интерфейсах.</em></h2></div><p class="section-side reveal">Цифровые продукты, предпринимательство и строительство. Откройте карточку, чтобы увидеть идею, возможности и текущий статус.</p></div>
       <div class="filters reveal" role="group" aria-label="Фильтрация проектов"><button type="button" class="filter" data-filter="all" aria-pressed="true">Все проекты</button><button type="button" class="filter" data-filter="system" aria-pressed="false">AI & Системы</button><button type="button" class="filter" data-filter="web" aria-pressed="false">Web & Продукты</button><button type="button" class="filter" data-filter="business" aria-pressed="false">Бизнес</button></div>
 
       <div class="work-grid" id="workGrid">
-        <!-- 01 VERIUM -->
         <article class="project p-verium span-12" data-category="system business" data-project="verium">
           <div class="cover"><img class="cover-photo" src="assets/covers/house.jpg" alt="" loading="lazy" decoding="async" />
             <span class="cover-index">01 / CONSTRUCTION & TECHNOLOGY</span>
@@ -507,7 +854,6 @@
           <div class="project-body"><div class="project-meta"><span>Строительство и AI</span><span class="status">Основатель VERIUM</span></div><h3>VERIUM / VERIUM OS</h3><p>Ремонт квартир и домов, организация строительства. Параллельно — развитие собственной платформы управления VERIUM OS.</p><div class="project-bottom"><div class="project-tags"><span>Construction</span><span>CRM</span><span>AI concept</span></div><button type="button" class="detail-button" data-open="verium" aria-label="Подробнее о VERIUM">↗</button></div></div>
         </article>
 
-        <!-- 02 RETAIL OS -->
         <article class="project p-retail span-7" data-category="system business" data-project="retail">
           <div class="cover">
             <span class="cover-index">02 / RETAIL OPERATIONS</span>
@@ -521,10 +867,22 @@
           <div class="project-body"><div class="project-meta"><span>Розничная торговля</span><span class="status">В разработке</span></div><h3>RETAIL OS</h3><p>Платформа управления продуктовым минимаркетом с ориентацией на Узбекистан. Первый этап — запуск для одного магазина.</p><div class="project-bottom"><div class="project-tags"><span>Retail</span><span>Operations</span><span>UZ-first</span></div><button type="button" class="detail-button" data-open="retail" aria-label="Подробнее о RETAIL OS">↗</button></div></div>
         </article>
 
-        <!-- 03 Nargizka Shop -->
+        <article class="project p-rulexx span-5" data-category="business" data-project="rulexx">
+          <div class="cover">
+            <span class="cover-index">03 / REGIONAL SALES · UZ</span>
+            <svg class="oil" viewBox="0 0 200 260" aria-hidden="true"><defs><linearGradient id="oilG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset=".55" stop-color="#e08a1e"/><stop offset="1" stop-color="#7a3a06"/></linearGradient><clipPath id="dropClip"><path d="M100 8 C100 8 22 112 22 166 A78 78 0 0 0 178 166 C178 112 100 8 100 8Z"/></clipPath></defs><path d="M100 8 C100 8 22 112 22 166 A78 78 0 0 0 178 166 C178 112 100 8 100 8Z" fill="rgba(255,255,255,.08)" stroke="rgba(255,240,210,.5)" stroke-width="1.5"/><g clip-path="url(#dropClip)"><path class="oil-wave" d="M-200 120 Q-150 104 -100 120 T0 120 T100 120 T200 120 T300 120 T400 120 V260 H-200Z" fill="url(#oilG)"/></g><ellipse cx="72" cy="150" rx="10" ry="22" fill="rgba(255,255,255,.35)" transform="rotate(18 72 150)"/></svg>
+            <div class="ui" aria-hidden="true"><div class="ui-head"><span>MOTOR OIL · UZ</span><span class="ui-pill">REGIONAL</span></div>
+              <div class="ui-row"><span><b>Rulexx</b></span><span class="ui-muted">Uzbekistan</span></div>
+              <div class="sizes"><span>5W-30</span><span class="on">5W-40</span><span>10W-40</span></div>
+              <div class="ui-row"><span>B2B · Retail · Service</span><span class="ui-pill live">SALES</span></div>
+            </div>
+            <span class="cover-title">Rulexx</span><span class="cover-more" aria-hidden="true">Подробнее ↗</span></div>
+          <div class="project-body"><div class="project-meta"><span>Моторные масла · продажи</span><span class="status">Региональный менеджер</span></div><h3>Rulexx</h3><p>Региональный менеджер компании моторных масел Rulexx в Узбекистане: продажи и развитие направления в регионе.</p><div class="project-bottom"><div class="project-tags"><span>Sales</span><span>B2B</span><span>Automotive</span></div><button type="button" class="detail-button" data-open="rulexx" aria-label="Подробнее о Rulexx">↗</button></div></div>
+        </article>
+
         <article class="project p-nargizka span-5" data-category="web business" data-project="nargizka">
           <div class="cover"><img class="cover-photo" src="assets/covers/fabric.jpg" alt="" loading="lazy" decoding="async" />
-            <span class="cover-index">03 / E-COMMERCE</span>
+            <span class="cover-index">04 / E-COMMERCE</span>
             <div class="ui" aria-hidden="true"><div class="ui-head"><span>NEW COLLECTION</span><span class="ui-pill">♡</span></div>
               <div class="shop-tile"></div>
               <div class="ui-row"><span><b>Dress · Silk</b></span><span class="ui-muted">Admin ✓</span></div>
@@ -535,18 +893,6 @@
           <div class="project-body"><div class="project-meta"><span>E-commerce · мода</span><span class="status">Готовится к запуску</span></div><h3>Nargizka Shop</h3><p>Интернет-магазин женских платьев с каталогом и панелью администратора. Создаётся для клиента.</p><div class="project-bottom"><div class="project-tags"><span>E-commerce</span><span>Admin panel</span><span>Turso</span></div><button type="button" class="detail-button" data-open="nargizka" aria-label="Подробнее о Nargizka Shop">↗</button></div></div>
         </article>
 
-        <!-- 04 CRM -->
-        <article class="project p-crm span-5" data-category="system web" data-project="crm">
-          <div class="cover"><img class="cover-photo" src="assets/covers/code.jpg" alt="" loading="lazy" decoding="async" />
-            <span class="cover-index">04 / BUSINESS OPERATIONS</span>
-            <div class="ui" aria-hidden="true"><div class="ui-head"><span>CRM / PIPELINE</span><span class="ui-pill">TS</span></div>
-              <div class="kanban"><div><small>LEAD</small><div class="kcard"></div><div class="kcard"></div><div class="kcard"></div></div><div><small>DEAL</small><div class="kcard"></div><div class="kcard"></div></div><div><small>DONE</small><div class="kcard"></div></div></div>
-            </div>
-            <span class="cover-title">CRM Workspace</span><span class="cover-more" aria-hidden="true">Подробнее ↗</span></div>
-          <div class="project-body"><div class="project-meta"><span>Управление клиентами</span><span class="status">Репозиторий</span></div><h3>CRM Workspace</h3><p>Веб-приложение для управления рабочими данными, с архитектурой на Next.js, React и TypeScript.</p><div class="project-bottom"><div class="project-tags"><span>Next.js</span><span>React</span><span>TypeScript</span></div><button type="button" class="detail-button" data-open="crm" aria-label="Подробнее о CRM">↗</button></div></div>
-        </article>
-
-        <!-- 05 KROMKA -->
         <article class="project p-barber span-7" data-category="web" data-project="barber">
           <div class="cover"><img class="cover-photo" src="assets/covers/barber.jpg" alt="" loading="lazy" decoding="async" />
             <span class="cover-index">05 / FULL-STACK EXPERIENCE</span>
@@ -559,10 +905,19 @@
           <div class="project-body"><div class="project-meta"><span>Сервис и бронирование</span><span class="status">Учебный проект</span></div><h3>KROMKA Barbershop</h3><p>Брендовый сайт, сценарий онлайн-записи, API и Telegram Mini App в составе full-stack учебного проекта.</p><div class="project-bottom"><div class="project-tags"><span>Next.js</span><span>Prisma</span><span>Telegram</span></div><button type="button" class="detail-button" data-open="barber" aria-label="Подробнее о KROMKA">↗</button></div></div>
         </article>
 
-        <!-- 06 ApexBank -->
+        <article class="project p-crm span-6" data-category="system web" data-project="crm">
+          <div class="cover"><img class="cover-photo" src="assets/covers/code.jpg" alt="" loading="lazy" decoding="async" />
+            <span class="cover-index">06 / BUSINESS OPERATIONS</span>
+            <div class="ui" aria-hidden="true"><div class="ui-head"><span>CRM / PIPELINE</span><span class="ui-pill">TS</span></div>
+              <div class="kanban"><div><small>LEAD</small><div class="kcard"></div><div class="kcard"></div><div class="kcard"></div></div><div><small>DEAL</small><div class="kcard"></div><div class="kcard"></div></div><div><small>DONE</small><div class="kcard"></div></div></div>
+            </div>
+            <span class="cover-title">CRM Workspace</span><span class="cover-more" aria-hidden="true">Подробнее ↗</span></div>
+          <div class="project-body"><div class="project-meta"><span>Управление клиентами</span><span class="status">Репозиторий</span></div><h3>CRM Workspace</h3><p>Веб-приложение для управления рабочими данными, с архитектурой на Next.js, React и TypeScript.</p><div class="project-bottom"><div class="project-tags"><span>Next.js</span><span>React</span><span>TypeScript</span></div><button type="button" class="detail-button" data-open="crm" aria-label="Подробнее о CRM">↗</button></div></div>
+        </article>
+
         <article class="project p-bank span-6" data-category="web" data-project="bank">
           <div class="cover"><img class="cover-photo" src="assets/covers/finance.jpg" alt="" loading="lazy" decoding="async" />
-            <span class="cover-index">06 / FINTECH UI</span>
+            <span class="cover-index">07 / FINTECH UI</span>
             <div class="ui" aria-hidden="true"><div class="ui-head"><span>APEX · OVERVIEW</span><span class="ui-pill">DEMO</span></div>
               <span class="ui-muted">Balance</span><div class="ui-big">12 480 000 <small style="font-size:11px;opacity:.6">so‘m</small></div>
               <svg class="spark" viewBox="0 0 200 46" preserveAspectRatio="none"><defs><linearGradient id="sg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0a6068" stop-opacity=".35"/><stop offset="1" stop-color="#0a6068" stop-opacity="0"/></linearGradient></defs><path d="M0 38 L22 30 L44 34 L66 20 L88 25 L110 12 L132 18 L154 8 L176 14 L200 4 V46 H0Z" fill="url(#sg)"/><path class="spark-line" d="M0 38 L22 30 L44 34 L66 20 L88 25 L110 12 L132 18 L154 8 L176 14 L200 4" fill="none" stroke="#0a6068" stroke-width="2"/></svg>
@@ -572,10 +927,9 @@
           <div class="project-body"><div class="project-meta"><span>Финтех UI</span><span class="status">Демо-интерфейс</span></div><h3>ApexBank</h3><p>Интерактивный концепт необанка: баланс, переводы, история операций и визуализация финансовых потоков.</p><div class="project-bottom"><div class="project-tags"><span>JavaScript</span><span>Chart.js</span><span>UI/UX</span></div><button type="button" class="detail-button" data-open="bank" aria-label="Подробнее об ApexBank">↗</button></div></div>
         </article>
 
-        <!-- 07 MedFuture -->
-        <article class="project p-medicine span-6" data-category="web" data-project="medicine">
+        <article class="project p-medicine span-4" data-category="web" data-project="medicine">
           <div class="cover"><img class="cover-photo" src="assets/covers/clinic.jpg" alt="" loading="lazy" decoding="async" />
-            <span class="cover-index">07 / HEALTHCARE CONCEPT</span>
+            <span class="cover-index">08 / HEALTHCARE CONCEPT</span>
             <div class="ui" aria-hidden="true"><div class="ui-head"><span>MEDFUTURE</span><span class="ui-pill">RU · UZ</span></div>
               <div class="ui-row"><span><b>Consultation</b></span><span class="ui-muted">Tue · 10:30</span></div>
               <div class="ui-row"><span>Price</span><span><span class="ui-pill">UZS</span> <span class="ui-pill" style="background:#167f80;color:#fff">USD</span></span></div>
@@ -585,10 +939,9 @@
           <div class="project-body"><div class="project-meta"><span>Медицинский веб-дизайн</span><span class="status">Концепт</span></div><h3>MedFuture</h3><p>Многоязычный лендинг медицинского центра: анимированный интерфейс и переключение валют.</p><div class="project-bottom"><div class="project-tags"><span>HTML / CSS</span><span>JavaScript</span><span>RU / UZ</span></div><button type="button" class="detail-button" data-open="medicine" aria-label="Подробнее о MedFuture">↗</button></div></div>
         </article>
 
-        <!-- 08 AURA -->
         <article class="project p-aura span-4" data-category="system web" data-project="aura">
           <div class="cover"><img class="cover-photo" src="assets/covers/aura.jpg" alt="" loading="lazy" decoding="async" />
-            <span class="cover-index">08 / EDTECH & AI</span>
+            <span class="cover-index">09 / EDTECH & AI</span>
             <div class="ui dark" aria-hidden="true"><div class="ui-head"><span>AURA · TUTOR</span><span class="ui-pill" style="background:rgba(255,255,255,.12)">AI</span></div>
               <div class="bubble me">Explain derivatives simply</div>
               <div class="bubble ai">Think of speed: how fast a value changes…</div>
@@ -598,10 +951,9 @@
           <div class="project-body"><div class="project-meta"><span>Образование и AI</span><span class="status">Веб-концепт</span></div><h3>AURA AI</h3><p>Концепция платформы обучения и подбора AI-репетиторов с выразительным интерфейсом.</p><div class="project-bottom"><div class="project-tags"><span>HTML / CSS</span><span>GSAP</span><span>EdTech</span></div><button type="button" class="detail-button" data-open="aura" aria-label="Подробнее об AURA AI">↗</button></div></div>
         </article>
 
-        <!-- 09 Fast Print -->
         <article class="project p-print span-4" data-category="business" data-project="print">
           <div class="cover"><img class="cover-photo" src="assets/covers/books.jpg" alt="" loading="lazy" decoding="async" />
-            <span class="cover-index">09 / REAL BUSINESS</span>
+            <span class="cover-index">10 / REAL BUSINESS</span>
             <div class="ui" aria-hidden="true"><div class="ui-head"><span>FAST PRINT · ORDER</span><span class="ui-pill">B2B</span></div>
               <div class="steps"><span class="done">1</span><i class="done"></i><span class="done">2</span><i></i><span>3</span></div>
               <div class="ui-row"><span>Format</span><span class="ui-muted">A4 · A5</span></div>
@@ -611,22 +963,22 @@
           <div class="project-body"><div class="project-meta"><span>Предпринимательство</span><span class="status">Действующий бизнес</span></div><h3>Fast Print</h3><p>Типография и B2B-продажи учебных материалов; развитие клиентских предложений и цифровых сценариев заказов.</p><div class="project-bottom"><div class="project-tags"><span>B2B</span><span>Sales</span><span>Workflow</span></div><button type="button" class="detail-button" data-open="print" aria-label="Подробнее о Fast Print">↗</button></div></div>
         </article>
 
-        <!-- 10 AI Estimator -->
-        <article class="project p-estimate span-4" data-category="system business" data-project="estimate">
+        <article class="project p-estimate span-12" data-category="system business" data-project="estimate">
           <div class="cover"><img class="cover-photo" src="assets/covers/living.jpg" alt="" loading="lazy" decoding="async" />
-            <span class="cover-index">10 / AI ESTIMATION</span>
+            <span class="cover-index">11 / AI ESTIMATION</span>
             <div class="ui" aria-hidden="true"><div class="ui-head"><span>AI ESTIMATOR</span><span class="ui-pill">DRAFT</span></div>
               <table class="ui-table"><thead><tr><th>ROOM / WORK</th><th>UNIT</th><th>QTY</th></tr></thead><tbody><tr><td>Living · plaster</td><td>m²</td><td>42.6</td></tr><tr><td>Bath · tiles</td><td>m²</td><td>18.2</td></tr><tr><td>Hall · skirting</td><td>m</td><td>14.0</td></tr></tbody></table>
             </div>
             <span class="cover-title">AI Estimator</span><span class="cover-more" aria-hidden="true">Подробнее ↗</span></div>
           <div class="project-body"><div class="project-meta"><span>Стройка и аналитика</span><span class="status">Проектируется</span></div><h3>AI Estimator</h3><p>Концепция AI-сметчика, работающего с обмерами, проектной документацией и структурой детальной сметы.</p><div class="project-bottom"><div class="project-tags"><span>AI Workflow</span><span>Excel</span><span>Construction</span></div><button type="button" class="detail-button" data-open="estimate" aria-label="Подробнее об AI Estimator">↗</button></div></div>
         </article>
+
       </div>
       <p class="work-note">Фотографии и интерфейсы на обложках — иллюстрации тематик (Unsplash и материалы из репозитория KROMKA), а не скриншоты готовых продуктов и не доказательство завершённых объектов или внедрений. Статус каждого проекта указан отдельно.</p>
     </div></section>
 
     <section class="section approach" id="approach"><div class="shell approach-grid">
-      <div><div class="kicker reveal">03 / Мой принцип</div><h2 class="h2 reveal">Не просто код.<br /><em>Целая система.</em></h2><p class="approach-lead reveal">Мой подход начинается с вопроса: «Как устроена работа бизнеса?» Затем появляются сценарии, интерфейсы, данные, автоматизация и понятные точки контроля.</p>
+      <div><div class="kicker reveal">05 / Мой принцип</div><h2 class="h2 reveal">Не просто код.<br /><em>Целая система.</em></h2><p class="approach-lead reveal">Мой подход начинается с вопроса: «Как устроена работа бизнеса?» Затем появляются сценарии, интерфейсы, данные, автоматизация и понятные точки контроля.</p>
         <div class="principles"><div class="principle reveal"><b>01</b><div><h3>Понимание задачи</h3><p>Разбираю бизнес-процесс, роли и реальные ограничения.</p></div></div><div class="principle reveal"><b>02</b><div><h3>Проектирование продукта</h3><p>Структура, логика, интерфейс и критические пользовательские пути.</p></div></div><div class="principle reveal"><b>03</b><div><h3>Разработка и интеграция</h3><p>Рабочие сценарии, автоматизация и возможность дальнейшего роста.</p></div></div></div></div>
       <div class="approach-visual reveal" role="img" aria-label="Схема: бизнес, AI, интерфейс и аналитика вокруг единой системы">
         <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="ring" cx="50" cy="50" r="24"/><circle class="ring" cx="50" cy="50" r="36"/><circle class="ring" cx="50" cy="50" r="47" stroke-dasharray=".6 1.4"/><path class="link" d="M50 50 L22 16"/><path class="link" d="M50 50 L80 26"/><path class="link" d="M50 50 L18 78"/><path class="link" d="M50 50 L78 84"/></svg>
@@ -635,9 +987,10 @@
     </div></section>
 
     <section class="section bio" id="about"><div class="shell bio-layout">
-      <div><div class="kicker reveal">04 / За технологиями — человек</div><h2 class="bio-title reveal">Абу-Бакир<br /><em>Кучкаров.</em></h2><p class="bio-intro reveal">Основатель VERIUM, предприниматель и AI-разработчик из Ташкента. Начал с практики в торговле строительными материалами, продажах и управлении. Сегодня развиваю направление ремонта домов, квартир и строительства, а также создаю цифровые продукты.</p><p class="bio-intro reveal">Мой подход соединяет две сферы: реальные строительные процессы и технологии, которые помогают управлять ими. Поэтому я смотрю на любой продукт и как предприниматель, и как разработчик.</p><div class="bio-card reveal"><div class="bio-avatar"><img src="assets/ak-mark.svg" alt="" /></div><div><strong>Открыт к сильным проектам и сотрудничеству</strong><small>Founder of VERIUM · AI & Digital Products<br />Ташкент, Узбекистан</small></div></div></div>
+      <div><div class="kicker reveal">06 / За технологиями — человек</div><h2 class="bio-title reveal">Абу-Бакир<br /><em>Кучкаров.</em></h2><p class="bio-intro reveal">Основатель VERIUM, предприниматель и AI-разработчик из Ташкента. Начал с практики в торговле строительными материалами, продажах и управлении. Сегодня развиваю направление ремонта домов, квартир и строительства, а также создаю цифровые продукты.</p><p class="bio-intro reveal">Мой подход соединяет две сферы: реальные строительные процессы и технологии, которые помогают управлять ими. Поэтому я смотрю на любой продукт и как предприниматель, и как разработчик.</p><p class="bio-intro reveal">Также я региональный менеджер компании моторных масел Rulexx в Узбекистане — поэтому продажи, работу с клиентами и управление знаю на практике, а не по книгам.</p><div class="bio-card reveal"><div class="bio-avatar"><img src="assets/ak-mark.svg" alt="" /></div><div><strong>Открыт к сильным проектам и сотрудничеству</strong><small>Founder of VERIUM · AI & Digital Products<br />Ташкент, Узбекистан</small></div></div></div>
       <div class="timeline" aria-label="Опыт и образование"><span class="timeline-progress" aria-hidden="true"></span>
         <div class="time-item reveal"><time>ОСНОВАТЕЛЬ</time><div><strong>VERIUM · Ремонт и строительство</strong><p>Работа с объектами, клиентами, ремонтом квартир и частных домов. Организация этапов строительных работ и развитие цифровой платформы VERIUM OS.</p></div></div>
+        <div class="time-item reveal"><time>СЕЙЧАС</time><div><strong>Rulexx · Региональный менеджер</strong><p>Компания моторных масел Rulexx в Узбекистане: продажи, работа с клиентами и развитие направления в регионе.</p></div></div>
         <div class="time-item reveal"><time>СЕЙЧАС</time><div><strong>AI & Digital Product Development</strong><p>Разработка концепций и интерфейсов веб-систем, AI-агентов, Telegram-интеграций и автоматизации бизнес-процессов.</p></div></div>
         <div class="time-item reveal"><time>СЕЙЧАС</time><div><strong>Fast Print · Предпринимательство</strong><p>Типография, производство материалов и развитие B2B-продаж для образовательных организаций.</p></div></div>
         <div class="time-item reveal"><time>5–7 ЛЕТ</time><div><strong>Торговля и операционное управление</strong><p>Работа с клиентами, строительными материалами, поставщиками, продажами и повседневными задачами бизнеса.</p></div></div>
@@ -650,8 +1003,8 @@
       <img class="contact-mark" src="assets/ak-mark.svg" alt="" aria-hidden="true" />
       <div class="shell">
         <div class="contact-inner">
-          <div><div class="kicker reveal">05 / Давайте знакомиться</div><h2 class="reveal">Есть идея?<br /><em>Давайте создадим.</em></h2><p class="reveal">Открыт к сотрудничеству в ремонте и строительстве, AI-разработке, веб-продуктах и автоматизации бизнеса.</p></div>
-          <div class="reveal"><div class="contact-actions"><a class="btn primary" href="https://t.me/ministr_009" target="_blank" rel="noopener noreferrer">Написать в Telegram ↗</a><a class="btn ghost" href="#projects">Посмотреть работы ↗</a></div><span class="tg-handle">TELEGRAM · @ministr_009</span></div>
+          <div><div class="kicker reveal">07 / Давайте знакомиться</div><h2 class="reveal">Есть идея?<br /><em>Давайте создадим.</em></h2><p class="reveal">Открыт к сотрудничеству: строительство и ремонт, продажи и управление, аналитика, QR-системы, AI и веб-продукты.</p></div>
+          <div class="reveal"><div class="contact-actions"><a class="btn primary" href="https://t.me/ministr_009" target="_blank" rel="noopener noreferrer">Написать в Telegram ↗</a><a class="btn ghost" href="#projects">Посмотреть работы ↗</a></div><a class="tg-card" href="https://t.me/ministr_009" target="_blank" rel="noopener noreferrer"><svg class="qr-real qr-small" viewBox="-2 -2 29 29" shape-rendering="crispEdges" role="img" aria-label="QR-код: Telegram @ministr_009"><rect x="-2" y="-2" width="29" height="29" rx="1.5" fill="#fff"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM10 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM11 1h1v1h-1zM13 1h1v1h-1zM16 1h1v1h-1zM18 1h1v1h-1zM24 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM9 3h1v1h-1zM12 3h1v1h-1zM13 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM21 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM14 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM9 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM14 5h1v1h-1zM18 5h1v1h-1zM24 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM11 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM0 8h1v1h-1zM6 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM13 8h1v1h-1zM14 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM21 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM0 9h1v1h-1zM1 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM7 9h1v1h-1zM9 9h1v1h-1zM10 9h1v1h-1zM11 9h1v1h-1zM12 9h1v1h-1zM15 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM0 10h1v1h-1zM1 10h1v1h-1zM2 10h1v1h-1zM4 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM13 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM17 10h1v1h-1zM21 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM0 11h1v1h-1zM1 11h1v1h-1zM2 11h1v1h-1zM3 11h1v1h-1zM7 11h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM24 11h1v1h-1zM0 12h1v1h-1zM2 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM11 12h1v1h-1zM13 12h1v1h-1zM16 12h1v1h-1zM18 12h1v1h-1zM24 12h1v1h-1zM0 13h1v1h-1zM1 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM19 13h1v1h-1zM23 13h1v1h-1zM0 14h1v1h-1zM4 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM23 14h1v1h-1zM24 14h1v1h-1zM0 15h1v1h-1zM2 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM9 15h1v1h-1zM12 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM24 15h1v1h-1zM0 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM9 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM8 17h1v1h-1zM10 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM20 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM24 18h1v1h-1zM0 19h1v1h-1zM6 19h1v1h-1zM11 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM20 19h1v1h-1zM24 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM9 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM12 21h1v1h-1zM15 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM10 22h1v1h-1zM16 22h1v1h-1zM21 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM12 23h1v1h-1zM16 23h1v1h-1zM17 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM24 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM16 24h1v1h-1zM18 24h1v1h-1zM21 24h1v1h-1zM24 24h1v1h-1z" fill="#0e1311"/></svg><span><b>@ministr_009</b><small>Сканируйте или нажмите</small></span></a></div>
         </div>
         <footer class="footer"><span class="footer-brand"><img src="assets/ak-mark.svg" alt="" />© 2026</span><span>СТРОИТЕЛЬСТВО × ТЕХНОЛОГИИ</span><div class="footer-links"><a href="#main">Наверх ↑</a><a href="https://t.me/ministr_009" target="_blank" rel="noopener noreferrer">Telegram</a></div></footer>
       </div>
@@ -666,6 +1019,7 @@
   <script>
     const projects={
       verium:{cover:'house.jpg',category:'Основатель / строительство и технологии',title:'VERIUM / VERIUM OS',summary:'VERIUM — моё строительное направление в Ташкенте: ремонт квартир и частных домов, строительные проекты и организация работ. Параллельно развиваю концепцию цифровой платформы для управления компанией.',bullets:['Работа с клиентами, задачами ремонта квартир и домов, подрядчиками и поставщиками.','Публичный сайт VERIUM на Next.js с формой заявок (исходный код в закрытом репозитории).','Проектирование VERIUM OS: панель руководителя, карта компании, сметы, финансы и AI-процессы.'],note:'VERIUM OS развивается поэтапно. Не все запланированные функции являются готовым коммерческим продуктом. Изображение дома иллюстративное.',url:null},
+      rulexx:{cover:null,tone:'rulexx',category:'Продажи / региональное направление',title:'Rulexx',summary:'Как региональный менеджер Rulexx я отвечаю за продажи и развитие бренда моторных масел в Узбекистане.',bullets:['Работа с клиентами и партнёрами в сфере моторных масел.','Развитие продаж бренда Rulexx в регионе.','Опыт продаж и операционного управления, который применяю и в цифровых проектах для бизнеса.'],note:'Роль описана со слов владельца; показатели продаж и партнёры не указываются. Rulexx — торговая марка её правообладателя, обложка — иллюстрация.',url:null},
       retail:{cover:null,category:'Retail / в разработке',title:'RETAIL OS',summary:'Система управления продуктовым минимаркетом, которую я разрабатываю с ориентацией на рынок Узбекистана.',bullets:['Первый этап — рабочая система для одного магазина.','Фокус на ежедневных операциях минимаркета и понятном интерфейсе для персонала.','Разработка ведётся поэтапно по согласованному плану задач.'],note:'Проект в активной разработке и пока не запущен. Анимация на обложке — иллюстрация интерфейса, а не скриншот готового продукта.',url:null},
       nargizka:{cover:'fabric.jpg',category:'E-commerce / клиентский проект',title:'Nargizka Shop',summary:'Интернет-магазин женских платьев с панелью администратора, который я готовлю к запуску для клиента.',bullets:['Витрина и каталог платьев для покупательниц.','Панель администратора для управления магазином.','Хостинг на Vercel, база данных Turso; платформу можно адаптировать для других магазинов одежды.'],note:'Магазин готовится к запуску; показатели продаж не заявляются. Фото на обложке — иллюстративная текстура ткани.',url:'https://github.com/abubakirkuchkarov-bot/Nargizka-shop'},
       crm:{cover:'code.jpg',category:'CRM / репозиторий',title:'CRM Workspace',summary:'Исследование и разработка веб-интерфейсов для управления клиентскими и операционными данными.',bullets:['Кодовая база Next.js / React / TypeScript.','Компонентная структура приложения, инструменты сортировки и визуализации.','Работа с авторизацией, данными и управленческими представлениями на уровне проекта.'],note:'Репозиторий подтверждён на GitHub. Наличие кода не означает коммерческий запуск.',url:'https://github.com/abubakirkuchkarov-bot/CRM'},
@@ -702,9 +1056,10 @@
       originalAttributes.forEach(([el,name,original])=>el.setAttribute(name,translate(original)));
       document.querySelectorAll('.lang-control button').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.lang===currentLanguage)));
       document.title=currentLanguage==='uz'?'Abu-Bakir Kuchkarov — VERIUM va raqamli yechimlar':'Абу-Бакир Кучкаров — Digital Systems & Business';
-      document.querySelector('meta[name="description"]').content=currentLanguage==='uz'?'Abu-Bakir Kuchkarov — VERIUM asoschisi, tadbirkor va AI dasturchi. Ta’mirlash, qurilish, CRM, veb-ilovalar va avtomatlashtirish.':originalDescription;
+      document.querySelector('meta[name="description"]').content=currentLanguage==='uz'?'Abu-Bakir Kuchkarov — VERIUM asoschisi, tadbirkor va AI dasturchi. Ta’mirlash va qurilish, savdo va boshqaruv, tahlil, QR tizimlar, CRM, veb-ilovalar va avtomatlashtirish.':originalDescription;
       cards.forEach(card=>card.querySelector('.cover').setAttribute('aria-label',(currentLanguage==='uz'?'Loyiha haqida: ':'Открыть карточку проекта ')+card.querySelector('h3').textContent));
       if(currentProjectId&&modal.classList.contains('open'))renderProject(currentProjectId);
+      if(typeof renderExplorer==='function'&&document.getElementById('exChart'))renderExplorer(false);
       menu.setAttribute('aria-label',translate(nav.classList.contains('open')?'Закрыть меню':'Открыть меню'));
       try{localStorage.setItem('abu_portfolio_language',currentLanguage)}catch{}
       if(window.ScrollTrigger)requestAnimationFrame(()=>ScrollTrigger.refresh());
@@ -729,7 +1084,7 @@
       document.getElementById('modalSummary').textContent=translate(p.summary);
       document.getElementById('modalBullets').replaceChildren(...p.bullets.map(v=>{const li=document.createElement('li');li.textContent=translate(v);return li}));
       document.getElementById('modalNote').textContent=translate(p.note);
-      const cover=document.getElementById('modalCover');cover.style.backgroundImage=p.cover?`url('assets/covers/${p.cover}')`:'radial-gradient(120% 90% at 0% 100%,#d9482a,transparent 55%),radial-gradient(90% 80% at 100% 0%,#f6c453,transparent 60%),linear-gradient(135deg,#f08a3c,#e0592d)';
+      const cover=document.getElementById('modalCover');cover.style.backgroundImage=p.cover?`url('assets/covers/${p.cover}')`:p.tone==='rulexx'?'radial-gradient(90% 80% at 85% 10%,#ffcf6b,transparent 55%),linear-gradient(140deg,#e2861f,#9b4307 60%,#4a1e03)':'radial-gradient(120% 90% at 0% 100%,#d9482a,transparent 55%),radial-gradient(90% 80% at 100% 0%,#f6c453,transparent 60%),linear-gradient(135deg,#f08a3c,#e0592d)';
       const link=document.getElementById('modalLink');link.hidden=!p.url;if(p.url)link.href=p.url;else link.removeAttribute('href');
     }
     function openProject(id){if(!projects[id])return;lastFocus=document.activeElement;currentProjectId=id;renderProject(id);modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('no-scroll');dialog.scrollTop=0;modalClose.focus();
@@ -757,6 +1112,93 @@
       let active='';const at=scrollY+innerHeight*.42;sections.forEach(s=>{if(s.offsetTop<=at)active=s.id});
       nav.querySelectorAll('a').forEach(l=>{if(l.getAttribute('href')==='#'+active)l.setAttribute('aria-current','location');else l.removeAttribute('aria-current')});raf=0}
     addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(updateScroll)},{passive:true});updateScroll();
+
+
+    /* ---------- Industry explorer ---------- */
+    const DAYS=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+    const industries={
+      sto:{title:'СТО и автосервис',problems:['Записи теряются в звонках и мессенджерах','Непонятна загрузка постов и мастеров','Клиенты не возвращаются на плановое ТО'],solutions:['Онлайн-запись и Telegram-бот с напоминаниями','QR на авто: история ремонтов и статус работ','Дашборд загрузки постов, выручки и запчастей'],metrics:['Загрузка постов','Средний чек','Повторные визиты'],chart:{type:'bars',title:'Загрузка постов по дням',labels:DAYS,values:[62,78,85,70,92,96,48],unit:'%'}},
+      shop:{title:'Магазины и розница',problems:['Остатки считаются вручную','Нет понятной картины продаж по товарам','Акции запускаются наугад'],solutions:['Учёт товаров, остатков и продаж в одной системе','QR-ценники и QR-каталог с наличием','ABC-аналитика: что продаётся, а что лежит'],metrics:['Оборачиваемость','Маржа','Средний чек'],chart:{type:'bars2',title:'Продажи и остатки по категориям',labels:['Напитки','Бакалея','Молочка','Снеки','Быт. химия'],series:[{name:'Продажи',values:[82,64,71,55,30]},{name:'Остатки',values:[40,58,35,62,80]}]}},
+      cafe:{title:'Кафе и рестораны',problems:['Очереди и ошибки в заказах','Официанты перегружены в часы пик','Меню и цены сложно обновлять'],solutions:['QR-меню на RU/UZ с фото и ценами','Заказ с телефона гостя прямо на кухню','Статусы заказа, оплата и отзыв по QR'],metrics:['Заказы по часам','Время отдачи','Средний чек'],chart:{type:'line',title:'QR-заказы по часам',labels:['10:00','12:00','14:00','16:00','18:00','20:00','22:00'],values:[12,46,38,20,52,74,40]}},
+      dist:{title:'Дистрибуция и опт',problems:['Нет контроля торговых точек','Заявки приходят в разном виде','Сложно планировать продажи по регионам'],solutions:['CRM для торговых представителей и точек','Приём заявок через Telegram-бот','План, факт и аналитика по клиентам'],metrics:['План / факт','Активные точки','Дебиторка'],chart:{type:'bars2',title:'План и факт по неделям',labels:['Нед 1','Нед 2','Нед 3','Нед 4'],series:[{name:'План',values:[80,80,85,85]},{name:'Факт',values:[72,84,79,90]}]}},
+      service:{title:'Услуги и офис',problems:['Заявки теряются между сотрудниками','Нет единой базы клиентов','Руководитель не видит статус работ'],solutions:['CRM с воронкой и задачами','AI-ассистент для первичных обращений','Отчёты для руководителя в Telegram'],metrics:['Конверсия заявок','Скорость ответа','Нагрузка команды'],chart:{type:'funnel',title:'Воронка заявок',labels:['Заявки','Квалификация','КП','Договор'],values:[100,64,38,22]}}
+    };
+    let currentIndustry='sto';
+    const SVGNS='http://www.w3.org/2000/svg';
+    const el=(tag,attrs={},text)=>{const n=document.createElementNS(SVGNS,tag);for(const k in attrs)n.setAttribute(k,attrs[k]);if(text!=null)n.textContent=text;return n};
+    const canAnimate=()=>window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function drawChart(svg,c,animate){
+      svg.replaceChildren();
+      const W=520,H=280,L=40,R=10,T=24,B=36,iw=W-L-R,ih=H-T-B;
+      const defs=el('defs');defs.innerHTML='<linearGradient id="gLime" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2f59a"/><stop offset="1" stop-color="#8cb33a"/></linearGradient><linearGradient id="gArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cdeb6a" stop-opacity=".45"/><stop offset="1" stop-color="#cdeb6a" stop-opacity="0"/></linearGradient>';svg.append(defs);
+      const legend=document.getElementById('exLegend');legend.replaceChildren();
+      if(c.type!=='funnel'){for(let i=0;i<=4;i++){const y=T+ih-ih*i/4;svg.append(el('line',{class:'grid-l',x1:L,x2:W-R,y1:y,y2:y}));svg.append(el('text',{x:L-8,y:y+4,'text-anchor':'end'},String(i*25)))}}
+      const anim=[];
+      if(c.type==='bars'||c.type==='bars2'){
+        const series=c.type==='bars'?[{values:c.values}]:c.series;const n=c.labels.length,slot=iw/n,gw=slot*.62,bw=gw/series.length;
+        const fills=c.type==='bars'?['url(#gLime)']:['url(#gLime)','rgba(241,238,230,.28)'];
+        if(c.type==='bars2')series.forEach((sr,i)=>{const sp=document.createElement('span');const ic=document.createElement('i');ic.style.background=i?'rgba(241,238,230,.4)':'#cdeb6a';sp.append(ic,translate(sr.name));legend.append(sp)});
+        c.labels.forEach((lab,i)=>{const x0=L+slot*i+(slot-gw)/2;svg.append(el('text',{x:L+slot*i+slot/2,y:H-12,'text-anchor':'middle'},translate(lab)));
+          series.forEach((sr,j)=>{const v=sr.values[i],h=ih*v/100,x=x0+bw*j+2,y=T+ih-h;const r=el('rect',{x,y,width:Math.max(4,bw-4),height:h,rx:5,fill:fills[j]});svg.append(r);anim.push({r,y,h});
+            if(c.type==='bars'){const t=el('text',{class:'val',x:x+(bw-4)/2,y:y-7,'text-anchor':'middle'},v+(c.unit||''));svg.append(t);anim.push({t})}})});
+      }else if(c.type==='line'){
+        const n=c.labels.length,step=iw/(n-1);const pts=c.values.map((v,i)=>[L+step*i,T+ih-ih*v/100]);
+        const d=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+        const area=el('path',{d:d+` L${L+iw} ${T+ih} L${L} ${T+ih}Z`,fill:'url(#gArea)'});const line=el('path',{d,fill:'none',stroke:'#cdeb6a','stroke-width':3,'stroke-linejoin':'round','stroke-linecap':'round'});svg.append(area,line);
+        pts.forEach((p,i)=>{const dot=el('circle',{cx:p[0],cy:p[1],r:5,fill:'#0e1311',stroke:'#cdeb6a','stroke-width':2.5});svg.append(dot);svg.append(el('text',{x:p[0],y:H-12,'text-anchor':'middle'},c.labels[i]));anim.push({dot})});
+        anim.push({line,area});
+      }else if(c.type==='funnel'){
+        const n=c.values.length,rowH=ih/n;c.values.forEach((v,i)=>{const w=iw*v/100,x=L+(iw-w)/2,y=T+rowH*i+6;const r=el('rect',{x,y,width:w,height:rowH-14,rx:10,fill:i===n-1?'#cdeb6a':`rgba(205,235,106,${.25+i*.15})`});svg.append(r);
+          svg.append(el('text',{class:'val',x:L+iw/2,y:y+(rowH-14)/2+4,'text-anchor':'middle',fill:i===n-1?'#0e1311':'#f1eee6',style:i===n-1?'fill:#0e1311':''},translate(c.labels[i])+' · '+v+'%'));anim.push({fr:r,x,w})});
+      }
+      if(animate&&canAnimate()){
+        anim.forEach(a=>{
+          if(a.r)gsap.fromTo(a.r,{attr:{y:a.y+a.h,height:0}},{attr:{y:a.y,height:a.h},duration:.9,ease:'power3.out',delay:Math.random()*.25});
+          if(a.t)gsap.from(a.t,{opacity:0,duration:.5,delay:.6});
+          if(a.dot)gsap.from(a.dot,{attr:{r:0},duration:.5,delay:.8,ease:'back.out(3)'});
+          if(a.line){const len=a.line.getTotalLength();gsap.fromTo(a.line,{strokeDasharray:len,strokeDashoffset:len},{strokeDashoffset:0,duration:1.4,ease:'power2.inOut'});gsap.from(a.area,{opacity:0,duration:1,delay:.4})}
+          if(a.fr)gsap.fromTo(a.fr,{attr:{x:L+iw/2,width:0}},{attr:{x:a.x,width:a.w},duration:1,ease:'power3.out'});
+        });
+      }
+    }
+    function renderExplorer(animate){
+      const d=industries[currentIndustry];
+      document.getElementById('exTitle').textContent=translate(d.title);
+      const fill=(id,arr)=>document.getElementById(id).replaceChildren(...arr.map(v=>{const li=document.createElement('li');li.textContent=translate(v);return li}));
+      fill('exProblems',d.problems);fill('exSolutions',d.solutions);
+      document.getElementById('exMetrics').replaceChildren(...d.metrics.map(v=>{const s=document.createElement('span');s.textContent=translate(v);return s}));
+      document.getElementById('exChartTitle').textContent=translate(d.chart.title);
+      drawChart(document.getElementById('exChart'),d.chart,animate);
+      if(animate&&canAnimate())gsap.from('#explorerPanel .ex-copy > *',{y:14,autoAlpha:0,duration:.6,stagger:.06,ease:'power3.out'});
+    }
+    const exTabs=[...document.querySelectorAll('.explorer-tabs [role="tab"]')];
+    function selectIndustry(tab,focus){exTabs.forEach(t=>{const on=t===tab;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1});document.getElementById('explorerPanel').setAttribute('aria-labelledby',tab.id);currentIndustry=tab.dataset.industry;renderExplorer(true);if(focus)tab.focus()}
+    exTabs.forEach((t,i)=>{t.addEventListener('click',()=>selectIndustry(t));t.addEventListener('keydown',e=>{let k=null;if(e.key==='ArrowRight')k=(i+1)%exTabs.length;if(e.key==='ArrowLeft')k=(i-1+exTabs.length)%exTabs.length;if(e.key==='Home')k=0;if(e.key==='End')k=exTabs.length-1;if(k!==null){e.preventDefault();selectIndustry(exTabs[k],true)}})});
+    renderExplorer(false);
+    let explorerSeen=false;
+    new IntersectionObserver((en,obs)=>{if(en[0].isIntersecting&&!explorerSeen){explorerSeen=true;renderExplorer(true);obs.disconnect()}},{threshold:.3}).observe(document.getElementById('explorerPanel'));
+
+    /* ---------- QR story ---------- */
+    const qrSteps=[...document.querySelectorAll('.qr-step')],qrScreens=[...document.querySelectorAll('.screen')],qrDots=[...document.querySelectorAll('.qr-progress i')];
+    let qrCurrent=1;
+    function setScreen(n){
+      qrCurrent=n;qrScreens.forEach(s=>s.classList.toggle('is-active',+s.dataset.screen===n));qrSteps.forEach(s=>s.classList.toggle('is-active',+s.dataset.step===n));qrDots.forEach((d,i)=>d.classList.toggle('on',i===n-1));
+      if(!canAnimate())return;const scr=qrScreens[n-1];
+      if(n===1)gsap.fromTo(scr.querySelector('.scan-line'),{top:'10%'},{top:'88%',duration:1.2,ease:'sine.inOut',yoyo:true,repeat:1});
+      if(n===2)gsap.from(scr.querySelectorAll('.dish'),{x:30,autoAlpha:0,duration:.5,stagger:.08,ease:'power3.out'});
+      if(n===3)gsap.from(scr.querySelectorAll('.o-row,.o-note,.o-total,.o-btn'),{y:12,autoAlpha:0,duration:.45,stagger:.07,ease:'power2.out'});
+      if(n===4)gsap.from(scr.querySelector('.ticket.new'),{y:-40,autoAlpha:0,scale:.9,duration:.6,ease:'back.out(1.8)'});
+      if(n===5)gsap.fromTo(scr.querySelector('.ring-p'),{strokeDashoffset:314},{strokeDashoffset:120,duration:1.3,ease:'power2.out'});
+      if(n===6)gsap.from(scr.querySelector('.stars'),{scale:.4,autoAlpha:0,duration:.6,delay:.2,ease:'back.out(2.5)'});
+    }
+    qrSteps.forEach(s=>{s.addEventListener('click',()=>setScreen(+s.dataset.step))});
+    const wide=matchMedia('(min-width: 901px)');
+    let qrRaf=0;
+    function syncQrToScroll(){qrRaf=0;if(!wide.matches)return;const mid=innerHeight*.5;let n=1;qrSteps.forEach(s=>{if(s.getBoundingClientRect().top<mid)n=+s.dataset.step});if(n!==qrCurrent)setScreen(n)}
+    addEventListener('scroll',()=>{if(!qrRaf)qrRaf=requestAnimationFrame(syncQrToScroll)},{passive:true});
+    let qrTimer=0;
+    new IntersectionObserver(([e])=>{clearInterval(qrTimer);if(e.isIntersecting&&!wide.matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches)qrTimer=setInterval(()=>setScreen(qrCurrent%6+1),2600)},{threshold:.4}).observe(document.querySelector('.phone'));
+    setScreen(1);
 
     try{setLanguage(localStorage.getItem('abu_portfolio_language')==='uz'?'uz':'ru')}catch{setLanguage('ru')}
 
@@ -806,6 +1248,14 @@
 
         gsap.utils.toArray('.cap').forEach(cap=>{const icon=cap.querySelector('.cap-icon');gsap.from(icon,{rotate:-90,scale:.6,duration:1,ease:'back.out(2)',scrollTrigger:{trigger:cap,start:'top 85%',once:true}})});
 
+
+        /* Solutions & QR motion */
+        gsap.utils.toArray('.pillar-icon').forEach(svg=>{const shapes=svg.querySelectorAll('path,rect,circle');shapes.forEach(sh=>{const len=sh.getTotalLength();gsap.fromTo(sh,{strokeDasharray:len,strokeDashoffset:len},{strokeDashoffset:0,duration:1.4,ease:'power2.inOut',scrollTrigger:{trigger:svg,start:'top 88%',once:true}})})});
+        gsap.from('.f-track i',{scaleX:0,duration:1.2,ease:'expo.out',stagger:.12,scrollTrigger:{trigger:'.funnel',start:'top 80%',once:true}});
+        gsap.from('.f-val',{autoAlpha:0,x:-8,duration:.6,stagger:.12,delay:.5,scrollTrigger:{trigger:'.funnel',start:'top 80%',once:true}});
+        gsap.from('.phone',{y:80,rotate:-4,autoAlpha:0,duration:1.3,ease:'expo.out',scrollTrigger:{trigger:'.qr-story',start:'top 80%',once:true}});
+        gsap.from('.explorer',{clipPath:'inset(8% 4% 8% 4% round 28px)',duration:1.3,ease:'expo.out',clearProps:'clipPath',scrollTrigger:{trigger:'.explorer',start:'top 85%',once:true}});
+        const rul=document.querySelector('.p-rulexx .oil');if(rul)gsap.from(rul,{y:40,scale:.8,autoAlpha:0,duration:1.4,ease:'expo.out',scrollTrigger:{trigger:rul,start:'top 95%',once:true}});
         const links=gsap.utils.toArray('.approach-visual .link');links.forEach(l=>{const len=l.getTotalLength();gsap.set(l,{strokeDasharray:len,strokeDashoffset:len})});
         gsap.timeline({scrollTrigger:{trigger:'.approach-visual',start:'top 75%',once:true}})
           .from('.node-center',{scale:.4,autoAlpha:0,duration:1,ease:'back.out(1.6)'})
@@ -816,6 +1266,16 @@
         gsap.fromTo('.timeline-progress',{scaleY:0},{scaleY:1,ease:'none',scrollTrigger:{trigger:'.timeline',start:'top 70%',end:'bottom 70%',scrub:true}});
         gsap.fromTo('.contact-mark',{rotate:-8,yPercent:10},{rotate:0,yPercent:0,ease:'none',scrollTrigger:{trigger:'.contact',start:'top bottom',end:'bottom bottom',scrub:true}});
         return()=>{};
+      });
+
+      /* Pointer-only polish: tilt covers, magnetic primary buttons */
+      mm.add('(prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine)',()=>{
+        cards.forEach(card=>{const cover=card.querySelector('.cover');const rx=gsap.quickTo(cover,'rotationX',{duration:.6,ease:'power3.out'}),ry=gsap.quickTo(cover,'rotationY',{duration:.6,ease:'power3.out'});gsap.set(cover,{transformPerspective:1100});
+          cover.addEventListener('pointermove',e=>{const r=cover.getBoundingClientRect();ry(((e.clientX-r.left)/r.width-.5)*5);rx(-((e.clientY-r.top)/r.height-.5)*4)});
+          cover.addEventListener('pointerleave',()=>{rx(0);ry(0)})});
+        document.querySelectorAll('.btn.primary,.nav-cta').forEach(b=>{const qx=gsap.quickTo(b,'x',{duration:.5,ease:'power3.out'}),qy=gsap.quickTo(b,'y',{duration:.5,ease:'power3.out'});
+          b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();qx((e.clientX-r.left-r.width/2)*.18);qy((e.clientY-r.top-r.height/2)*.25)});
+          b.addEventListener('pointerleave',()=>{qx(0);qy(0)})});
       });
       mm.add('(prefers-reduced-motion: reduce)',()=>{gsap.set('[data-hero]',{visibility:'visible'});root.classList.remove('motion')});
     });

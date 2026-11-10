@@ -508,6 +508,118 @@
     .p-rulexx .ui{top:16%}
     .work-grid .project.span-12.p-estimate .ui{width:min(36%,380px)}
 
+
+    /* ---------- V7: loader ---------- */
+    .loader{display:none}
+    .motion .loader{display:grid;position:fixed;inset:0;z-index:200;place-items:center;background:var(--ink);color:#f1eee6}
+    .loader-inner{display:flex;flex-direction:column;align-items:center;gap:22px}
+    .loader-mark{width:96px;height:96px}
+    .loader-mark path{fill:none;stroke:#f1eee6;stroke-width:4;stroke-linecap:square}
+    .loader-mark .beam{stroke:var(--lime)}
+    .loader-count{font:500 clamp(48px,7vw,96px)/1 var(--sans);letter-spacing:-.06em;font-weight:700}
+    .loader-count small{font-size:.35em;color:var(--lime);margin-left:4px}
+    .loader-name{font:500 10.5px var(--mono);letter-spacing:.18em;color:#8d9488}
+    .loader-bar{width:min(240px,60vw);height:1px;background:rgba(241,238,230,.15);overflow:hidden}.loader-bar i{display:block;height:100%;background:var(--lime);transform-origin:left;transform:scaleX(0)}
+
+    /* ---------- V7: roll hover text ---------- */
+    .roll{display:inline-block;overflow:hidden;vertical-align:top;line-height:1.3;height:1.3em}
+    .roll>span{display:inline-block;text-shadow:0 1.3em currentColor;transition:transform .55s cubic-bezier(.7,0,.2,1)}
+    a:hover>.roll>span,button:hover>.roll>span,a:focus-visible>.roll>span{transform:translateY(-1.3em)}
+    @media (hover:none){a:hover>.roll>span,button:hover>.roll>span{transform:none}}
+
+    /* ---------- V7: hero hold ---------- */
+    .hold-hint{display:inline-flex;align-items:center;gap:10px;color:#c9cec3}
+    .hold-hint i{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--lime);position:relative}
+    .hold-hint i::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--lime);transform:scale(.4);transition:transform .3s}
+    .hero.is-holding .hold-hint i::after{transform:scale(1)}
+    .hero{-webkit-user-select:none;user-select:none}
+    .hero .hero-summary,.hero h1{-webkit-user-select:text;user-select:text}
+
+    /* ---------- V7: skills ---------- */
+    .skills{background:var(--ink);color:#f1eee6;overflow:clip;padding-top:clamp(70px,8vw,120px)}
+    .skills .kicker{color:var(--lime)}
+    .skills .h2 em{color:var(--lime)}
+    .skills .section-side{color:var(--muted-dark);max-width:520px;margin-top:22px}
+    .kinetic{display:flex;flex-direction:column;gap:4px;margin-bottom:clamp(50px,7vw,100px);white-space:nowrap}
+    .kinetic-row{display:flex;align-items:center;gap:clamp(18px,2.4vw,40px);font-size:clamp(46px,8.6vw,150px);font-weight:700;letter-spacing:-.06em;line-height:1;will-change:transform}
+    .kinetic-row i{font-style:normal;font-size:.36em;color:var(--lime)}
+    .kinetic-row.k2{font-family:var(--serif);font-style:italic;font-weight:500;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1px rgba(241,238,230,.45)}
+    .kinetic-row.k2 i{-webkit-text-stroke:0;color:var(--brass)}
+    .skills-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,80px);align-items:center}
+    .skills-legend{display:flex;gap:18px;margin-top:26px;font:500 11px var(--mono);letter-spacing:.08em;color:#a7ada3}
+    .lg{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px}.lg1{background:var(--brass)}.lg2{background:var(--lime)}.lg3{background:#f1eee6}
+    .sphere-wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px}
+    .sphere{position:relative;width:min(440px,84vw);aspect-ratio:1;border-radius:50%;cursor:grab;touch-action:pan-y;background:radial-gradient(circle at 50% 50%,rgba(205,235,106,.08),transparent 62%)}
+    .sphere:active{cursor:grabbing}
+    .sphere::before{content:"";position:absolute;inset:8%;border-radius:50%;border:1px dashed rgba(241,238,230,.1)}
+    .sphere span{position:absolute;left:50%;top:50%;white-space:nowrap;font:600 13px var(--sans);padding:6px 11px;border-radius:30px;border:1px solid rgba(241,238,230,.16);background:rgba(22,29,25,.85);will-change:transform,opacity}
+    .sphere .t-biz{color:#e3c48f;border-color:rgba(185,153,106,.4)}
+    .sphere .t-tech{color:var(--lime);border-color:rgba(205,235,106,.35)}
+    .sphere .t-build{color:#f1eee6;border-color:rgba(241,238,230,.35)}
+    .sphere-hint{font:500 10.5px var(--mono);letter-spacing:.1em;color:#7c8378}
+    .skills-rail{margin-top:clamp(50px,7vw,90px);position:relative}
+    .skills-track{display:flex;gap:18px;padding:10px var(--pad) 26px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .skills-track::-webkit-scrollbar{display:none}
+    .skills-rail.is-pinned .skills-track{overflow:visible;width:max-content}
+    .skill-card{flex:0 0 min(400px,82vw);scroll-snap-align:start;position:relative;padding:26px;border-radius:24px;background:linear-gradient(160deg,#18201b,#111613);border:1px solid var(--line-dark);overflow:hidden}
+    .skill-card::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(241,238,230,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(241,238,230,.04) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(160deg,#000,transparent 70%)}
+    .skill-card:nth-child(3n+1) .block3d i{background:rgba(185,153,106,.22);border-color:rgba(185,153,106,.8)}
+    .sc-top{display:flex;justify-content:space-between;align-items:flex-start;height:110px}
+    .sc-num{font:700 64px/1 var(--sans);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1px rgba(241,238,230,.35)}
+    .block3d{--rx:-24deg;--ry:38deg;position:relative;width:54px;height:54px;margin:20px 22px 0 0;transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateY(var(--ry))}
+    .block3d i{position:absolute;inset:0;border:1.5px solid var(--lime);background:rgba(205,235,106,.12)}
+    .block3d .f1{transform:translateZ(27px)}.block3d .f2{transform:rotateY(180deg) translateZ(27px)}.block3d .f3{transform:rotateY(90deg) translateZ(27px)}.block3d .f4{transform:rotateY(-90deg) translateZ(27px)}.block3d .f5{transform:rotateX(90deg) translateZ(27px)}.block3d .f6{transform:rotateX(-90deg) translateZ(27px)}
+    .skill-card h3{margin:22px 0 6px;font-size:clamp(24px,2.2vw,32px);letter-spacing:-.04em;line-height:1.1}
+    .sc-where{margin:0 0 18px;font:500 11px var(--mono);letter-spacing:.06em;color:var(--lime)}
+    .sc-chips{display:flex;flex-wrap:wrap;gap:7px;margin:0;padding:0;list-style:none}
+    .sc-chips li{padding:8px 12px;border-radius:30px;background:rgba(241,238,230,.06);border:1px solid var(--line-dark);font-size:12.5px;font-weight:600;color:#dfe3d9;transition:background .3s,color .3s}
+    .skill-card:hover .sc-chips li{border-color:rgba(205,235,106,.3)}
+    .sc-chips li:hover{background:var(--lime);color:var(--ink)}
+    .rail-foot{display:flex;align-items:center;gap:20px;font:500 10.5px var(--mono);letter-spacing:.1em;color:#7c8378;padding-bottom:10px}
+    .rail-bar{flex:1;max-width:320px;height:2px;background:rgba(241,238,230,.1);overflow:hidden}
+    .rail-bar i{display:block;height:100%;background:var(--lime);transform-origin:left;transform:scaleX(.1)}
+
+    /* ---------- V7: project tower ---------- */
+    .tower-show{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,4vw,60px);align-items:center;min-height:min(86vh,820px);margin-bottom:clamp(40px,5vw,70px);border-radius:28px;background:radial-gradient(70% 80% at 70% 50%,rgba(205,235,106,.14),transparent 60%),var(--ink);color:#f1eee6;padding:clamp(24px,4vw,60px);overflow:hidden;position:relative}
+    .tower-show::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(241,238,230,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(241,238,230,.035) 1px,transparent 1px);background-size:56px 56px}
+    .tower-info{position:relative;z-index:2}
+    .tw-floor{font:500 11px var(--mono);letter-spacing:.14em;color:#9da397}.tw-floor b{color:var(--lime);font-weight:500;font-size:13px}
+    .tower-info h3{margin:14px 0 10px;font-size:clamp(36px,4.6vw,76px);letter-spacing:-.055em;line-height:.98;min-height:1em}
+    .tower-info p{margin:0 0 26px;font:500 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#a7ada3;min-height:1.4em}
+    .tower-info .btn.dark{background:var(--lime);color:var(--ink)}
+    .tw-hint{display:block;margin-top:22px;font:500 10.5px var(--mono);letter-spacing:.08em;color:#7c8378;max-width:300px;line-height:1.7}
+    .tw-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
+    .tw-list button{width:30px;height:30px;border-radius:8px;border:1px solid var(--line-dark);background:transparent;color:#9da397;font:500 10px var(--mono);transition:background .3s,color .3s,border-color .3s}
+    .tw-list button.on{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+    .tower-stage{position:relative;height:min(70vh,640px);perspective:1800px;display:grid;place-items:center;z-index:1}
+    .tower3d{--rz:-38deg;position:relative;width:min(360px,56vw);height:min(240px,37vw);margin-top:min(22vh,190px);transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(var(--rz))}
+    .plate{position:absolute;inset:0;transform-style:preserve-3d;border-radius:6px;background:#1c241f center/cover no-repeat;box-shadow:0 0 0 1px rgba(241,238,230,.18);transition:filter .5s,box-shadow .5s;cursor:pointer}
+    .plate::before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,rgba(14,19,17,.05),rgba(14,19,17,.55))}
+    .plate .edge-x,.plate .edge-y{position:absolute;background:#2b352f}
+    .plate .edge-x{left:0;right:0;bottom:0;height:10px;transform-origin:bottom;transform:rotateX(-90deg);background:linear-gradient(90deg,#29322c,#3b4740)}
+    .plate .edge-y{top:0;bottom:0;right:0;width:10px;transform-origin:right;transform:rotateY(90deg);background:linear-gradient(#1f2722,#323d36)}
+    .plate .pl-label{position:absolute;left:10px;bottom:8px;font:700 13px var(--sans);letter-spacing:-.02em;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+    .plate.is-active{box-shadow:0 0 0 2px var(--lime),0 30px 60px rgba(0,0,0,.5)}
+    .plate.is-active .edge-x,.plate.is-active .edge-y{background:var(--lime)}
+    .plate.dim{filter:brightness(.55) saturate(.6)}
+    .p-grad-retail{background-image:radial-gradient(120% 90% at 0% 100%,#d9482a,transparent 55%),linear-gradient(135deg,#f6c453,#e0592d)!important}
+    .p-grad-rulexx{background-image:radial-gradient(90% 80% at 85% 10%,#ffcf6b,transparent 55%),linear-gradient(140deg,#e2861f,#9b4307 60%,#4a1e03)!important}
+    .tower-ground{position:absolute;left:50%;top:50%;width:150%;height:150%;transform:translate(-50%,-50%) translateZ(-30px);border-radius:50%;background:radial-gradient(closest-side,rgba(205,235,106,.18),transparent);pointer-events:none}
+
+    @media (max-width:900px){
+      .skills-intro{grid-template-columns:1fr}
+      .tower-show{grid-template-columns:1fr;min-height:auto}
+      .tower-stage{height:min(92vw,460px);order:-1}
+      .kinetic-row.k2{-webkit-text-stroke:.8px rgba(241,238,230,.45)}
+    }
+    @media (max-width:600px){
+      .sphere span{font-size:11px;padding:5px 9px}
+      .skill-card{padding:22px}
+      .sc-num{font-size:52px}
+      .tower-info h3{font-size:40px}
+      .hold-hint{display:none}
+    }
+
     /* ---------- Motion gating ---------- */
     .motion [data-hero],.motion [data-hero-line]{visibility:hidden}
 
@@ -603,17 +715,19 @@
     }
     @media (prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
+      .hold-hint{display:none!important}
       *,*::before,*::after{animation:none!important;transition:none!important}
     }
   </style>
 </head>
 <body>
+  <div class="loader" id="loader" aria-hidden="true"><div class="loader-inner"><svg class="loader-mark" viewBox="0 0 64 64"><path d="M11 49 L23 15 L35 49"/><path d="M41 15 V49"/><path d="M41 37 L54 15"/><path d="M46.2 28.2 L54.5 49"/><path class="beam" d="M15.2 37 H41"/></svg><div class="loader-count"><span id="loaderNum">0</span><small>%</small></div><div class="loader-bar"><i id="loaderBar"></i></div><div class="loader-name">ABU-BAKIR KUCHKAROV · TASHKENT</div></div></div>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
   <a class="skip" href="#main">Перейти к содержимому</a>
   <header class="top" id="top">
     <div class="shell top-inner">
       <a href="#main" class="logo" aria-label="Абу-Бакир Кучкаров — наверх"><span class="logo-icon"><img src="assets/ak-mark.svg" alt="" width="40" height="40" /></span><span class="logo-name">ABU-BAKIR KUCHKAROV<span class="logo-caption">DIGITAL SYSTEMS / TASHKENT</span></span></a>
-      <nav class="nav" id="nav" aria-label="Основная навигация"><a href="#verium">VERIUM</a><a href="#expertise">Компетенции</a><a href="#solutions">Решения</a><a href="#qr">QR</a><a href="#projects">Проекты</a><a href="#approach">Подход</a><a href="#about">Обо мне</a></nav>
+      <nav class="nav" id="nav" aria-label="Основная навигация"><a href="#verium">VERIUM</a><a href="#expertise">Компетенции</a><a href="#skills">Навыки</a><a href="#solutions">Решения</a><a href="#qr">QR</a><a href="#projects">Проекты</a><a href="#approach">Подход</a><a href="#about">Обо мне</a></nav>
       <div class="lang-control" role="group" aria-label="Язык сайта / Sayt tili"><button type="button" data-lang="ru" lang="ru" aria-label="Русский" aria-pressed="true">RU</button><button type="button" data-lang="uz" lang="uz" aria-label="O‘zbekcha" aria-pressed="false">UZ</button></div>
       <a class="nav-cta" href="#contact">Обсудить проект <span aria-hidden="true">↗</span></a>
       <button class="menu-button" id="menuButton" type="button" aria-controls="nav" aria-expanded="false" aria-label="Открыть меню"><span></span></button>
@@ -636,7 +750,7 @@
           <div class="hero-actions" data-hero><a class="btn primary" href="#projects">Исследовать проекты <span class="arr" aria-hidden="true">↗</span></a><a class="btn ghost" href="#verium">Моя компания VERIUM <span class="arr" aria-hidden="true">↗</span></a></div>
         </div>
       </div>
-      <div class="hero-bottom" data-hero><div class="shell"><span><strong>01 /</strong> TASHKENT, UZ</span><span>BUSINESS × TECHNOLOGY</span><span class="scroll-cue"><i></i>Листайте вниз</span></div></div>
+      <div class="hero-bottom" data-hero><div class="shell"><span><strong>01 /</strong> TASHKENT, UZ</span><span>BUSINESS × TECHNOLOGY</span><span class="hold-hint"><i></i>Зажмите — разберу здание по этажам</span><span class="scroll-cue"><i></i>Листайте вниз</span></div></div>
     </section>
 
     <div class="trust"><div class="shell trust-inner">
@@ -683,8 +797,43 @@
       </div>
     </div></section>
 
+    <section class="section skills" id="skills">
+      <div class="kinetic" aria-hidden="true">
+        <div class="kinetic-row k1"><span>Стройка</span><i>✦</i><span>Продажи</span><i>✦</i><span>Управление</span><i>✦</i><span>Аналитика</span><i>✦</i><span>Автоматизация</span><i>✦</i><span>Технологии</span><i>✦</i><span>Стройка</span><i>✦</i><span>Продажи</span><i>✦</i></div>
+        <div class="kinetic-row k2"><span>VERIUM</span><i>+</i><span>Rulexx</span><i>+</i><span>Fast Print</span><i>+</i><span>AI</span><i>+</i><span>QR</span><i>+</i><span>CRM</span><i>+</i><span>VERIUM</span><i>+</i><span>Rulexx</span><i>+</i></div>
+      </div>
+      <div class="shell skills-intro">
+        <div class="skills-copy">
+          <div class="kicker reveal">02 / Навыки</div>
+          <h2 class="h2 reveal">Навыки, проверенные <em>практикой.</em></h2>
+          <p class="section-side reveal">Стройка, продажи, управление и технологии — навыки, которые я каждый день применяю в своих проектах и работе.</p>
+          <div class="skills-legend reveal"><span><i class="lg lg1"></i>Бизнес</span><span><i class="lg lg2"></i>Технологии</span><span><i class="lg lg3"></i>Стройка</span></div>
+        </div>
+        <div class="sphere-wrap reveal">
+          <div class="sphere" id="skillSphere" role="img" aria-label="Облако навыков">
+            <span class="t-biz">Sales</span><span class="t-biz">B2B</span><span class="t-biz">KPI</span><span class="t-biz">Negotiation</span><span class="t-biz">Leadership</span><span class="t-biz">Analytics</span><span class="t-biz">Dashboards</span><span class="t-biz">Excel</span><span class="t-biz">Retail</span><span class="t-biz">Rulexx</span>
+            <span class="t-tech">Next.js</span><span class="t-tech">React</span><span class="t-tech">TypeScript</span><span class="t-tech">Three.js</span><span class="t-tech">GSAP</span><span class="t-tech">Prisma</span><span class="t-tech">Turso</span><span class="t-tech">Vercel</span><span class="t-tech">Telegram</span><span class="t-tech">AI agents</span><span class="t-tech">Claude</span><span class="t-tech">QR</span><span class="t-tech">CRM</span><span class="t-tech">UX/UI</span>
+            <span class="t-build">VERIUM</span><span class="t-build">Renovation</span><span class="t-build">Estimates</span><span class="t-build">Construction</span>
+          </div>
+          <span class="sphere-hint">Потяните, чтобы вращать</span>
+        </div>
+      </div>
+
+      <div class="skills-rail" id="skillsRail">
+        <div class="skills-track" id="skillsTrack">
+          <article class="skill-card"><div class="sc-top"><span class="sc-num">01</span><div class="block3d" aria-hidden="true"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i></div></div><h3>Строительство и ремонт</h3><p class="sc-where">Где применяю: VERIUM</p><ul class="sc-chips"><li>Ремонт квартир</li><li>Ремонт домов</li><li>Организация работ</li><li>Сметы и обмеры</li><li>Подрядчики</li><li>Закупка материалов</li></ul></article>
+          <article class="skill-card"><div class="sc-top"><span class="sc-num">02</span><div class="block3d" aria-hidden="true"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i></div></div><h3>Продажи и B2B</h3><p class="sc-where">Где применяю: Rulexx, Fast Print, торговля</p><ul class="sc-chips"><li>Отдел продаж с нуля</li><li>Переговоры</li><li>B2B-продажи</li><li>Работа с партнёрами</li><li>Скрипты</li><li>Региональные продажи</li></ul></article>
+          <article class="skill-card"><div class="sc-top"><span class="sc-num">03</span><div class="block3d" aria-hidden="true"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i></div></div><h3>Управление и операции</h3><p class="sc-where">Где применяю: VERIUM, Fast Print</p><ul class="sc-chips"><li>Регламенты</li><li>Контроль команды</li><li>Планирование</li><li>Поставщики</li><li>Склад и остатки</li><li>KPI</li></ul></article>
+          <article class="skill-card"><div class="sc-top"><span class="sc-num">04</span><div class="block3d" aria-hidden="true"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i></div></div><h3>Аналитика и оптимизация</h3><p class="sc-where">Где применяю: торговля и собственные проекты</p><ul class="sc-chips"><li>Дашборды</li><li>План / факт</li><li>ABC-анализ</li><li>Маржинальность</li><li>Excel / Google Sheets</li><li>Отчётность</li></ul></article>
+          <article class="skill-card"><div class="sc-top"><span class="sc-num">05</span><div class="block3d" aria-hidden="true"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i></div></div><h3>AI и автоматизация</h3><p class="sc-where">Где применяю: VERIUM OS, AI Estimator, боты</p><ul class="sc-chips"><li>AI-агенты</li><li>Telegram-боты</li><li>Промпт-инжиниринг</li><li>Интеграции</li><li>Автоматизация процессов</li><li>Claude / ChatGPT</li></ul></article>
+          <article class="skill-card"><div class="sc-top"><span class="sc-num">06</span><div class="block3d" aria-hidden="true"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i></div></div><h3>Веб и продукт</h3><p class="sc-where">Где применяю: CRM, KROMKA, Nargizka Shop, RETAIL OS</p><ul class="sc-chips"><li>Next.js / React</li><li>TypeScript</li><li>HTML / CSS / JS</li><li>GSAP / Three.js</li><li>Prisma / Turso</li><li>UI/UX</li><li>QR-системы</li></ul></article>
+        </div>
+        <div class="shell rail-foot"><span class="rail-hint">Прокрутка двигает карточки</span><span class="rail-bar"><i id="railProgress"></i></span></div>
+      </div>
+    </section>
+
     <section class="section solutions" id="solutions"><div class="shell">
-      <div class="section-head"><div><div class="kicker reveal">02 / Решения для бизнеса</div><h2 class="h2 reveal">Решаю задачи бизнеса <em>любой сферы.</em></h2></div><p class="section-side reveal">Помогаю владельцам навести порядок в продажах, управлении и цифрах — и подкрепляю это инструментами: CRM, ботами, QR и аналитикой.</p></div>
+      <div class="section-head"><div><div class="kicker reveal">03 / Решения для бизнеса</div><h2 class="h2 reveal">Решаю задачи бизнеса <em>любой сферы.</em></h2></div><p class="section-side reveal">Помогаю владельцам навести порядок в продажах, управлении и цифрах — и подкрепляю это инструментами: CRM, ботами, QR и аналитикой.</p></div>
 
       <div class="pillars">
         <article class="pillar reveal"><span class="pillar-num">01</span><svg class="pillar-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 38 L18 24 L26 30 L42 12" /><path d="M32 12 H42 V22" /></svg><h3>Продажи</h3><p>Построение отдела продаж, воронка, скрипты, обучение и KPI менеджеров.</p></article>
@@ -754,7 +903,7 @@
     </div></section>
 
     <section class="section qr" id="qr"><div class="shell">
-      <div class="section-head"><div><div class="kicker reveal">03 / QR-системы</div><h2 class="h2 reveal">От QR-меню <em>до получения заказа.</em></h2></div><p class="section-side reveal">Гость сканирует QR — и дальше всё происходит в его телефоне: меню, заказ, кухня, статус, оплата и отзыв. Тот же подход работает для СТО, магазинов, отелей и сервиса.</p></div>
+      <div class="section-head"><div><div class="kicker reveal">04 / QR-системы</div><h2 class="h2 reveal">От QR-меню <em>до получения заказа.</em></h2></div><p class="section-side reveal">Гость сканирует QR — и дальше всё происходит в его телефоне: меню, заказ, кухня, статус, оплата и отзыв. Тот же подход работает для СТО, магазинов, отелей и сервиса.</p></div>
 
       <div class="qr-story">
         <div class="qr-stage">
@@ -837,7 +986,11 @@
     </div></section>
 
     <section class="section work" id="projects"><div class="shell">
-      <div class="section-head"><div><div class="kicker reveal">04 / Избранные работы</div><h2 class="h2 reveal">Идеи, воплощённые <em>в интерфейсах.</em></h2></div><p class="section-side reveal">Цифровые продукты, предпринимательство и строительство. Откройте карточку, чтобы увидеть идею, возможности и текущий статус.</p></div>
+      <div class="section-head"><div><div class="kicker reveal">05 / Избранные работы</div><h2 class="h2 reveal">Идеи, воплощённые <em>в интерфейсах.</em></h2></div><p class="section-side reveal">Цифровые продукты, предпринимательство и строительство. Откройте карточку, чтобы увидеть идею, возможности и текущий статус.</p></div>
+      <div class="tower-show" id="towerShow">
+        <div class="tower-info"><span class="tw-floor">FLOOR <b id="twIdx">01</b> / <span id="twTotal">11</span></span><h3 id="twTitle">VERIUM</h3><p id="twMeta"></p><button type="button" class="btn dark" id="twOpen">Открыть проект <span class="arr" aria-hidden="true">↗</span></button><div class="tw-list" id="twList" role="group" aria-label="Этажи-проекты"></div><span class="tw-hint">Каждый этаж — отдельный проект. Прокрутка поднимает этажи, клик по этажу открывает его.</span></div>
+        <div class="tower-stage" aria-hidden="true"><div class="tower3d" id="tower3d"></div></div>
+      </div>
       <div class="filters reveal" role="group" aria-label="Фильтрация проектов"><button type="button" class="filter" data-filter="all" aria-pressed="true">Все проекты</button><button type="button" class="filter" data-filter="system" aria-pressed="false">AI & Системы</button><button type="button" class="filter" data-filter="web" aria-pressed="false">Web & Продукты</button><button type="button" class="filter" data-filter="business" aria-pressed="false">Бизнес</button></div>
 
       <div class="work-grid" id="workGrid">
@@ -978,7 +1131,7 @@
     </div></section>
 
     <section class="section approach" id="approach"><div class="shell approach-grid">
-      <div><div class="kicker reveal">05 / Мой принцип</div><h2 class="h2 reveal">Не просто код.<br /><em>Целая система.</em></h2><p class="approach-lead reveal">Мой подход начинается с вопроса: «Как устроена работа бизнеса?» Затем появляются сценарии, интерфейсы, данные, автоматизация и понятные точки контроля.</p>
+      <div><div class="kicker reveal">06 / Мой принцип</div><h2 class="h2 reveal">Не просто код.<br /><em>Целая система.</em></h2><p class="approach-lead reveal">Мой подход начинается с вопроса: «Как устроена работа бизнеса?» Затем появляются сценарии, интерфейсы, данные, автоматизация и понятные точки контроля.</p>
         <div class="principles"><div class="principle reveal"><b>01</b><div><h3>Понимание задачи</h3><p>Разбираю бизнес-процесс, роли и реальные ограничения.</p></div></div><div class="principle reveal"><b>02</b><div><h3>Проектирование продукта</h3><p>Структура, логика, интерфейс и критические пользовательские пути.</p></div></div><div class="principle reveal"><b>03</b><div><h3>Разработка и интеграция</h3><p>Рабочие сценарии, автоматизация и возможность дальнейшего роста.</p></div></div></div></div>
       <div class="approach-visual reveal" role="img" aria-label="Схема: бизнес, AI, интерфейс и аналитика вокруг единой системы">
         <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="ring" cx="50" cy="50" r="24"/><circle class="ring" cx="50" cy="50" r="36"/><circle class="ring" cx="50" cy="50" r="47" stroke-dasharray=".6 1.4"/><path class="link" d="M50 50 L22 16"/><path class="link" d="M50 50 L80 26"/><path class="link" d="M50 50 L18 78"/><path class="link" d="M50 50 L78 84"/></svg>
@@ -987,7 +1140,7 @@
     </div></section>
 
     <section class="section bio" id="about"><div class="shell bio-layout">
-      <div><div class="kicker reveal">06 / За технологиями — человек</div><h2 class="bio-title reveal">Абу-Бакир<br /><em>Кучкаров.</em></h2><p class="bio-intro reveal">Основатель VERIUM, предприниматель и AI-разработчик из Ташкента. Начал с практики в торговле строительными материалами, продажах и управлении. Сегодня развиваю направление ремонта домов, квартир и строительства, а также создаю цифровые продукты.</p><p class="bio-intro reveal">Мой подход соединяет две сферы: реальные строительные процессы и технологии, которые помогают управлять ими. Поэтому я смотрю на любой продукт и как предприниматель, и как разработчик.</p><p class="bio-intro reveal">Также я региональный менеджер компании моторных масел Rulexx в Узбекистане — поэтому продажи, работу с клиентами и управление знаю на практике, а не по книгам.</p><div class="bio-card reveal"><div class="bio-avatar"><img src="assets/ak-mark.svg" alt="" /></div><div><strong>Открыт к сильным проектам и сотрудничеству</strong><small>Founder of VERIUM · AI & Digital Products<br />Ташкент, Узбекистан</small></div></div></div>
+      <div><div class="kicker reveal">07 / За технологиями — человек</div><h2 class="bio-title reveal">Абу-Бакир<br /><em>Кучкаров.</em></h2><p class="bio-intro reveal">Основатель VERIUM, предприниматель и AI-разработчик из Ташкента. Начал с практики в торговле строительными материалами, продажах и управлении. Сегодня развиваю направление ремонта домов, квартир и строительства, а также создаю цифровые продукты.</p><p class="bio-intro reveal">Мой подход соединяет две сферы: реальные строительные процессы и технологии, которые помогают управлять ими. Поэтому я смотрю на любой продукт и как предприниматель, и как разработчик.</p><p class="bio-intro reveal">Также я региональный менеджер компании моторных масел Rulexx в Узбекистане — поэтому продажи, работу с клиентами и управление знаю на практике, а не по книгам.</p><div class="bio-card reveal"><div class="bio-avatar"><img src="assets/ak-mark.svg" alt="" /></div><div><strong>Открыт к сильным проектам и сотрудничеству</strong><small>Founder of VERIUM · AI & Digital Products<br />Ташкент, Узбекистан</small></div></div></div>
       <div class="timeline" aria-label="Опыт и образование"><span class="timeline-progress" aria-hidden="true"></span>
         <div class="time-item reveal"><time>ОСНОВАТЕЛЬ</time><div><strong>VERIUM · Ремонт и строительство</strong><p>Работа с объектами, клиентами, ремонтом квартир и частных домов. Организация этапов строительных работ и развитие цифровой платформы VERIUM OS.</p></div></div>
         <div class="time-item reveal"><time>СЕЙЧАС</time><div><strong>Rulexx · Региональный менеджер</strong><p>Компания моторных масел Rulexx в Узбекистане: продажи, работа с клиентами и развитие направления в регионе.</p></div></div>
@@ -1003,7 +1156,7 @@
       <img class="contact-mark" src="assets/ak-mark.svg" alt="" aria-hidden="true" />
       <div class="shell">
         <div class="contact-inner">
-          <div><div class="kicker reveal">07 / Давайте знакомиться</div><h2 class="reveal">Есть идея?<br /><em>Давайте создадим.</em></h2><p class="reveal">Открыт к сотрудничеству: строительство и ремонт, продажи и управление, аналитика, QR-системы, AI и веб-продукты.</p></div>
+          <div><div class="kicker reveal">08 / Давайте знакомиться</div><h2 class="reveal">Есть идея?<br /><em>Давайте создадим.</em></h2><p class="reveal">Открыт к сотрудничеству: строительство и ремонт, продажи и управление, аналитика, QR-системы, AI и веб-продукты.</p></div>
           <div class="reveal"><div class="contact-actions"><a class="btn primary" href="https://t.me/ministr_009" target="_blank" rel="noopener noreferrer">Написать в Telegram ↗</a><a class="btn ghost" href="#projects">Посмотреть работы ↗</a></div><a class="tg-card" href="https://t.me/ministr_009" target="_blank" rel="noopener noreferrer"><svg class="qr-real qr-small" viewBox="-2 -2 29 29" shape-rendering="crispEdges" role="img" aria-label="QR-код: Telegram @ministr_009"><rect x="-2" y="-2" width="29" height="29" rx="1.5" fill="#fff"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM10 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM11 1h1v1h-1zM13 1h1v1h-1zM16 1h1v1h-1zM18 1h1v1h-1zM24 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM9 3h1v1h-1zM12 3h1v1h-1zM13 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM21 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM14 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM9 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM14 5h1v1h-1zM18 5h1v1h-1zM24 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM11 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM0 8h1v1h-1zM6 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM13 8h1v1h-1zM14 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM21 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM0 9h1v1h-1zM1 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM7 9h1v1h-1zM9 9h1v1h-1zM10 9h1v1h-1zM11 9h1v1h-1zM12 9h1v1h-1zM15 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM0 10h1v1h-1zM1 10h1v1h-1zM2 10h1v1h-1zM4 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM13 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM17 10h1v1h-1zM21 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM0 11h1v1h-1zM1 11h1v1h-1zM2 11h1v1h-1zM3 11h1v1h-1zM7 11h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM24 11h1v1h-1zM0 12h1v1h-1zM2 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM11 12h1v1h-1zM13 12h1v1h-1zM16 12h1v1h-1zM18 12h1v1h-1zM24 12h1v1h-1zM0 13h1v1h-1zM1 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM19 13h1v1h-1zM23 13h1v1h-1zM0 14h1v1h-1zM4 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM23 14h1v1h-1zM24 14h1v1h-1zM0 15h1v1h-1zM2 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM9 15h1v1h-1zM12 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM24 15h1v1h-1zM0 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM9 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM8 17h1v1h-1zM10 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM20 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM24 18h1v1h-1zM0 19h1v1h-1zM6 19h1v1h-1zM11 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM20 19h1v1h-1zM24 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM9 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM12 21h1v1h-1zM15 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM10 22h1v1h-1zM16 22h1v1h-1zM21 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM12 23h1v1h-1zM16 23h1v1h-1zM17 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM24 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM16 24h1v1h-1zM18 24h1v1h-1zM21 24h1v1h-1zM24 24h1v1h-1z" fill="#0e1311"/></svg><span><b>@ministr_009</b><small>Сканируйте или нажмите</small></span></a></div>
         </div>
         <footer class="footer"><span class="footer-brand"><img src="assets/ak-mark.svg" alt="" />© 2026</span><span>СТРОИТЕЛЬСТВО × ТЕХНОЛОГИИ</span><div class="footer-links"><a href="#main">Наверх ↑</a><a href="https://t.me/ministr_009" target="_blank" rel="noopener noreferrer">Telegram</a></div></footer>
@@ -1060,6 +1213,7 @@
       cards.forEach(card=>card.querySelector('.cover').setAttribute('aria-label',(currentLanguage==='uz'?'Loyiha haqida: ':'Открыть карточку проекта ')+card.querySelector('h3').textContent));
       if(currentProjectId&&modal.classList.contains('open'))renderProject(currentProjectId);
       if(typeof renderExplorer==='function'&&document.getElementById('exChart'))renderExplorer(false);
+      if(typeof setTower==='function'&&typeof plates!=='undefined'&&plates.length)setTower(towerActive);
       menu.setAttribute('aria-label',translate(nav.classList.contains('open')?'Закрыть меню':'Открыть меню'));
       try{localStorage.setItem('abu_portfolio_language',currentLanguage)}catch{}
       if(window.ScrollTrigger)requestAnimationFrame(()=>ScrollTrigger.refresh());
@@ -1109,7 +1263,7 @@
     const topBar=document.getElementById('top'),scrollProgress=document.getElementById('scrollProgress'),sections=[...document.querySelectorAll('main section[id]')];let raf=0;
     function updateScroll(){const max=document.documentElement.scrollHeight-innerHeight;scrollProgress.style.transform='scaleX('+(max>0?Math.min(1,Math.max(0,scrollY/max)):0)+')';
       topBar.classList.toggle('is-solid',scrollY>30||nav.classList.contains('open'));
-      let active='';const at=scrollY+innerHeight*.42;sections.forEach(s=>{if(s.offsetTop<=at)active=s.id});
+      let active='';const at=innerHeight*.42;sections.forEach(s=>{if(s.getBoundingClientRect().top<=at)active=s.id});
       nav.querySelectorAll('a').forEach(l=>{if(l.getAttribute('href')==='#'+active)l.setAttribute('aria-current','location');else l.removeAttribute('aria-current')});raf=0}
     addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(updateScroll)},{passive:true});updateScroll();
 
@@ -1200,6 +1354,62 @@
     new IntersectionObserver(([e])=>{clearInterval(qrTimer);if(e.isIntersecting&&!wide.matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches)qrTimer=setInterval(()=>setScreen(qrCurrent%6+1),2600)},{threshold:.4}).observe(document.querySelector('.phone'));
     setScreen(1);
 
+
+    /* ---------- V7: roll-hover text on nav links and buttons ---------- */
+    document.querySelectorAll('.nav a,.btn,.nav-cta,.footer-links a').forEach(elm=>{
+      [...elm.childNodes].forEach(n=>{if(n.nodeType===3&&n.nodeValue.trim()){const outer=document.createElement('span');outer.className='roll';const inner=document.createElement('span');elm.insertBefore(outer,n);inner.append(n);outer.append(inner)}});
+    });
+
+    /* ---------- V7: skill sphere (CSS 3D, rotates only while visible) ---------- */
+    const sphere=document.getElementById('skillSphere');
+    const sphereTags=sphere?[...sphere.querySelectorAll('span')]:[];
+    const sphereState={ax:.35,ay:0,vx:0,vy:.0035,drag:false,lx:0,ly:0,visible:false,raf:0};
+    const tagPos=sphereTags.map((t,i,arr)=>{const n=arr.length,phi=Math.acos(1-2*(i+.5)/n),theta=Math.PI*(1+Math.sqrt(5))*i;return[Math.cos(theta)*Math.sin(phi),Math.cos(phi),Math.sin(theta)*Math.sin(phi)]});
+    function drawSphere(){
+      if(!sphere)return;const R=sphere.clientWidth*.42,cx=Math.cos(sphereState.ax),sx=Math.sin(sphereState.ax),cy=Math.cos(sphereState.ay),sy=Math.sin(sphereState.ay);
+      sphereTags.forEach((t,i)=>{let[x,y,z]=tagPos[i];const x1=x*cy+z*sy,z1=-x*sy+z*cy;const y2=y*cx-z1*sx,z2=y*sx+z1*cx;const s=.62+(z2+1)*.26;
+        t.style.transform=`translate(-50%,-50%) translate3d(${(x1*R).toFixed(1)}px,${(y2*R).toFixed(1)}px,0) scale(${s.toFixed(3)})`;t.style.opacity=(.28+(z2+1)*.36).toFixed(2);t.style.zIndex=String(Math.round((z2+1)*50))});
+    }
+    function sphereLoop(){if(!sphereState.visible){sphereState.raf=0;return}
+      if(!sphereState.drag){sphereState.ay+=sphereState.vy;sphereState.ax+=sphereState.vx;sphereState.vx*=.95;sphereState.vy+=(.0035-sphereState.vy)*.03}
+      drawSphere();sphereState.raf=requestAnimationFrame(sphereLoop)}
+    if(sphere){
+      drawSphere();
+      const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(!reduceMotion)new IntersectionObserver(([e])=>{sphereState.visible=e.isIntersecting;if(e.isIntersecting&&!sphereState.raf)sphereState.raf=requestAnimationFrame(sphereLoop)}).observe(sphere);
+      sphere.addEventListener('pointerdown',e=>{sphereState.drag=true;sphereState.lx=e.clientX;sphereState.ly=e.clientY;sphere.setPointerCapture(e.pointerId)});
+      sphere.addEventListener('pointermove',e=>{if(!sphereState.drag)return;const dx=e.clientX-sphereState.lx,dy=e.clientY-sphereState.ly;sphereState.lx=e.clientX;sphereState.ly=e.clientY;sphereState.ay+=dx*.006;sphereState.ax-=dy*.006;sphereState.vy=dx*.0012;sphereState.vx=-dy*.0012;if(reduceMotion)drawSphere()});
+      const end=()=>{sphereState.drag=false};sphere.addEventListener('pointerup',end);sphere.addEventListener('pointercancel',end);
+      addEventListener('resize',drawSphere);
+    }
+
+    /* ---------- V7: project tower (each floor is a project) ---------- */
+    const tower3d=document.getElementById('tower3d');
+    const plates=[];let towerActive=0,towerGap=26,towerManual=false;
+    if(tower3d){
+      const ground=document.createElement('div');ground.className='tower-ground';tower3d.append(ground);
+      const list=document.getElementById('twList');
+      cards.forEach((card,i)=>{
+        const pl=document.createElement('div');pl.className='plate';const img=card.querySelector('.cover-photo');
+        if(img)pl.style.backgroundImage=`url('${img.getAttribute('src')}')`;else pl.classList.add('p-grad-'+card.dataset.project);
+        pl.innerHTML='<span class="edge-x"></span><span class="edge-y"></span>';const lab=document.createElement('span');lab.className='pl-label';lab.textContent=card.querySelector('.cover-title').textContent;pl.append(lab);
+        pl.addEventListener('click',()=>{if(i===towerActive)openProject(card.dataset.project);else{towerManual=true;setTower(i)}});
+        tower3d.append(pl);plates.push(pl);
+        const b=document.createElement('button');b.type='button';b.textContent=String(i+1).padStart(2,'0');b.setAttribute('aria-label',card.querySelector('h3').textContent);b.addEventListener('click',()=>{towerManual=true;setTower(i)});list.append(b);
+      });
+      document.getElementById('twTotal').textContent=String(cards.length).padStart(2,'0');
+      document.getElementById('twOpen').addEventListener('click',()=>openProject(cards[towerActive].dataset.project));
+    }
+    function layoutTower(){plates.forEach((pl,i)=>{const d=i-towerActive,act=i===towerActive;const z=i*towerGap+(act?towerGap*.8:0)+(i>towerActive?towerGap*3.2:0);const out=act?Math.min(70,towerGap*2.7):0;
+      pl.style.transform=`translate3d(${out}px,${-out*.6}px,${z}px)`;pl.classList.toggle('is-active',act);pl.classList.toggle('dim',!act&&Math.abs(d)>0)})}
+    function setTower(i){towerActive=Math.max(0,Math.min(plates.length-1,i));const card=cards[towerActive];
+      document.getElementById('twIdx').textContent=String(towerActive+1).padStart(2,'0');
+      document.getElementById('twTitle').textContent=card.querySelector('h3').textContent;
+      document.getElementById('twMeta').textContent=card.querySelector('.project-meta span').textContent;
+      document.querySelectorAll('#twList button').forEach((b,k)=>b.classList.toggle('on',k===towerActive));
+      layoutTower()}
+    if(tower3d){plates.forEach(p=>p.style.transition='transform .7s cubic-bezier(.2,.75,.2,1),filter .5s,box-shadow .5s');setTower(0)}
+
     try{setLanguage(localStorage.getItem('abu_portfolio_language')==='uz'?'uz':'ru')}catch{setLanguage('ru')}
 
     /* ---------- GSAP motion ---------- */
@@ -1209,15 +1419,60 @@
       gsap.registerPlugin(ScrollTrigger);
       const mm=gsap.matchMedia();
       mm.add('(prefers-reduced-motion: no-preference)',()=>{
-        gsap.set('[data-hero],[data-hero-line]',{visibility:'visible'});root.classList.remove('motion');
-        const intro=gsap.timeline({defaults:{ease:'power4.out'}});
+        gsap.set('[data-hero],[data-hero-line]',{visibility:'visible'});
+        const intro=gsap.timeline({paused:true,defaults:{ease:'power4.out'}});
         intro.from('[data-hero-line]',{yPercent:115,duration:1.2,stagger:.12},.1)
              .from('.hero .eyebrow',{y:16,autoAlpha:0,duration:.9},0)
              .from('.hero-summary,.hero-actions',{y:24,autoAlpha:0,duration:1,stagger:.1},.45)
              .from('.hero-badge',{y:20,autoAlpha:0,duration:.9,stagger:.12},.7)
              .from('.hero-bottom',{autoAlpha:0,duration:.8},.8);
+        const playIntro=()=>{if(window.__introStarted)return;window.__introStarted=true;root.classList.remove('motion');intro.play();document.dispatchEvent(new Event('intro:start'))};
+        /* Loader: the AK mark draws itself, then the curtain lifts */
+        const loader=document.getElementById('loader');
+        if(loader){
+          const t0=performance.now();let loaded=document.readyState==='complete';addEventListener('load',()=>{loaded=true},{once:true});
+          const strokes=loader.querySelectorAll('.loader-mark path');strokes.forEach(pth=>{const len=pth.getTotalLength();gsap.set(pth,{strokeDasharray:len,strokeDashoffset:len})});
+          gsap.to(strokes,{strokeDashoffset:0,duration:.9,stagger:.12,ease:'power2.inOut'});
+          const c={v:0},num=document.getElementById('loaderNum'),bar=document.getElementById('loaderBar');
+          const exit=()=>{gsap.timeline({onComplete:()=>loader.remove()}).to('.loader-inner',{y:-30,autoAlpha:0,duration:.45,ease:'power2.in'}).to(loader,{clipPath:'inset(0% 0% 100% 0%)',duration:1,ease:'expo.inOut'},'-=.1').add(playIntro,'-=.55')};
+          const waitExit=()=>{if(loaded||performance.now()-t0>2600)exit();else setTimeout(waitExit,90)};
+          gsap.to(c,{v:100,duration:1.25,ease:'power2.inOut',onUpdate:()=>{num.textContent=Math.round(c.v);bar.style.transform=`scaleX(${c.v/100})`},onComplete:waitExit});
+        }else playIntro();
         if(innerWidth>900)gsap.to('.hero-copy',{yPercent:-14,autoAlpha:.25,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
 
+
+        /* V7 — skills: kinetic type, pinned horizontal rail, 3D blocks */
+        gsap.fromTo('.kinetic-row.k1',{xPercent:0},{xPercent:-22,ease:'none',scrollTrigger:{trigger:'.kinetic',start:'top bottom',end:'bottom top',scrub:true}});
+        gsap.fromTo('.kinetic-row.k2',{xPercent:-22},{xPercent:0,ease:'none',scrollTrigger:{trigger:'.kinetic',start:'top bottom',end:'bottom top',scrub:true}});
+        const blocks=gsap.utils.toArray('.block3d'),railBar=document.getElementById('railProgress');
+        const spinBlocks=p=>blocks.forEach((b,i)=>{b.style.setProperty('--ry',(38+p*360+i*24)+'deg');b.style.setProperty('--rx',(-24+Math.sin(p*Math.PI*2+i)*14)+'deg')});
+        const rail=document.getElementById('skillsRail'),track=document.getElementById('skillsTrack');
+        gsap.matchMedia().add('(prefers-reduced-motion: no-preference) and (min-width: 901px)',()=>{
+          rail.classList.add('is-pinned');
+          const dist=()=>Math.max(0,track.scrollWidth-innerWidth);
+          const tw=gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:rail,pin:true,start:'center 55%',end:()=>'+='+dist(),scrub:.8,invalidateOnRefresh:true,refreshPriority:10,anticipatePin:1,onUpdate:self=>{railBar.style.transform=`scaleX(${.1+self.progress*.9})`;spinBlocks(self.progress)}}});
+          gsap.from('.skill-card',{y:60,autoAlpha:0,duration:1,stagger:.08,ease:'power3.out',scrollTrigger:{trigger:rail,start:'top 85%',once:true}});
+          return()=>{rail.classList.remove('is-pinned');gsap.set(track,{clearProps:'transform'})};
+        });
+        gsap.matchMedia().add('(prefers-reduced-motion: no-preference) and (max-width: 900px)',()=>{const onS=()=>{const p=track.scrollLeft/Math.max(1,track.scrollWidth-track.clientWidth);railBar.style.transform=`scaleX(${.1+p*.9})`;spinBlocks(p)};track.addEventListener('scroll',onS,{passive:true});onS();return()=>track.removeEventListener('scroll',onS)});
+        gsap.from('.sphere',{scale:.6,autoAlpha:0,rotate:-20,duration:1.4,ease:'expo.out',scrollTrigger:{trigger:'.sphere',start:'top 85%',once:true}});
+
+        /* V7 — project tower: scroll lifts floor after floor */
+        if(plates.length){
+          const gap={v:4};const n=plates.length;let lastIdx=-1;
+          const upd=self=>{const idx=Math.round(self.progress*(n-1));if(idx!==lastIdx){lastIdx=idx;towerManual=false;setTower(idx)}tower3d.style.setProperty('--rz',(-38+self.progress*28)+'deg')};
+          gsap.to(gap,{v:26,duration:1.4,ease:'expo.out',onUpdate:()=>{towerGap=gap.v;layoutTower()},scrollTrigger:{trigger:'.tower-show',start:'top 75%',once:true}});
+          towerGap=4;layoutTower();
+          gsap.matchMedia().add('(prefers-reduced-motion: no-preference) and (min-width: 901px)',()=>{ScrollTrigger.create({trigger:'.tower-show',pin:true,start:'center center',end:'+='+(n*16)+'%',scrub:true,refreshPriority:9,anticipatePin:1,onUpdate:upd})});
+          gsap.matchMedia().add('(prefers-reduced-motion: no-preference) and (max-width: 900px)',()=>{ScrollTrigger.create({trigger:'.tower-show',start:'top 65%',end:'bottom 35%',scrub:true,onUpdate:upd})});
+        }
+
+        /* V7 — sections rise over each other */
+        gsap.matchMedia().add('(prefers-reduced-motion: no-preference) and (min-width: 901px)',()=>{
+          ['.verium','#expertise','.solutions','.qr','.approach','.bio','.contact'].forEach(sel=>{const sec=document.querySelector(sel);if(!sec)return;
+            gsap.fromTo(sec,{clipPath:'inset(5% 3% 0% 3% round 44px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)',ease:'none',scrollTrigger:{trigger:sec,start:'top bottom',end:'top 30%',scrub:true}})});
+        });
+        ScrollTrigger.sort();
         ScrollTrigger.batch('.reveal',{start:'top 88%',once:true,onEnter:els=>gsap.from(els,{y:36,autoAlpha:0,duration:1,ease:'power3.out',stagger:.08,overwrite:true})});
 
         gsap.utils.toArray('.verium-media img').forEach((img,i)=>gsap.fromTo(img,{yPercent:i?6:-6},{yPercent:i?-6:6,ease:'none',scrollTrigger:{trigger:'.verium',start:'top bottom',end:'bottom top',scrub:true}}));
@@ -1280,7 +1535,7 @@
       mm.add('(prefers-reduced-motion: reduce)',()=>{gsap.set('[data-hero]',{visibility:'visible'});root.classList.remove('motion')});
     });
     addEventListener('load',()=>{if(window.ScrollTrigger)ScrollTrigger.refresh()});
-    setTimeout(()=>document.documentElement.classList.remove('motion'),2500);
+    setTimeout(()=>{document.documentElement.classList.remove('motion');const l=document.getElementById('loader');if(l&&!window.__introStarted)l.remove()},4500);
   </script>
 
   <!-- Three.js hero scene: an architectural frame assembled floor by floor, wrapped in a quiet data network -->
@@ -1345,9 +1600,20 @@
 
       // assemble animation (floors rise into place)
       const build={p:reduce?1:0};
-      function applyBuild(){floors.forEach((g,i)=>{const local=Math.min(1,Math.max(0,build.p*(FLOORS+3)-i)/3);const e=1-Math.pow(1-local,3);g.position.y=g.userData.y-(1-e)*1.4;setOpacity(g,e)});setOpacity(roof,Math.max(0,build.p*1.4-.4));setOpacity(net,build.p)}
+      function applyBuild(){floors.forEach((g,i)=>{const local=Math.min(1,Math.max(0,build.p*(FLOORS+3)-i)/3);const e=1-Math.pow(1-local,3);g.userData.by=g.userData.y-(1-e)*1.4;g.position.y=g.userData.by;setOpacity(g,e)});setOpacity(roof,Math.max(0,build.p*1.4-.4));setOpacity(net,build.p)}
       applyBuild();
-      if(!reduce){if(window.gsap)gsap.to(build,{p:1,duration:2.8,ease:'power2.out',delay:.25,onUpdate:applyBuild});else{build.p=1;applyBuild()}}
+      if(!reduce){const begin=()=>{if(window.gsap)gsap.to(build,{p:1,duration:2.8,ease:'power2.out',delay:.15,onUpdate:applyBuild});else{build.p=1;applyBuild()}};
+        if(window.__introStarted||!document.getElementById('loader')||!document.documentElement.classList.contains('motion'))begin();else document.addEventListener('intro:start',begin,{once:true})}
+      /* Hold to take the building apart floor by floor; release to reassemble */
+      const explode={v:0};let seedE=11;const rndE=()=>(seedE=(seedE*16807)%2147483647)/2147483647;
+      floors.forEach((g,i)=>{const a=rndE()*Math.PI*2;g.userData.dir=[Math.cos(a),Math.sin(a)];g.userData.spin=(rndE()-.5)*2.2;g.userData.lift=i*.55+rndE()*.4});
+      const heroEl=document.querySelector('.hero');
+      if(heroEl&&!reduce&&window.gsap){
+        heroEl.addEventListener('pointerdown',e=>{if(e.button>0||e.target.closest('a,button,.hero-summary'))return;heroEl.classList.add('is-holding');gsap.to(explode,{v:1,duration:1.2,ease:'power3.out',overwrite:true})});
+        const release=()=>{if(!heroEl.classList.contains('is-holding'))return;heroEl.classList.remove('is-holding');gsap.to(explode,{v:0,duration:1.6,ease:'elastic.out(1,.42)',overwrite:true})};
+        addEventListener('pointerup',release);addEventListener('pointercancel',release);heroEl.addEventListener('pointerleave',release);
+        heroEl.addEventListener('contextmenu',e=>{if(heroEl.classList.contains('is-holding'))e.preventDefault()});
+      }
 
       const pointer={x:0,y:0},cur={x:0,y:0};
       addEventListener('pointermove',e=>{pointer.x=e.clientX/innerWidth-.5;pointer.y=e.clientY/innerHeight-.5},{passive:true});
@@ -1364,6 +1630,7 @@
         net.rotation.y=-time*.05;
         world.rotation.x=cur.y*.08;
         world.position.y=innerWidth<900?0:-sy*1.2;
+        if(Math.abs(explode.v)>0.0005||explode.last){explode.last=Math.abs(explode.v)>0.0005;floors.forEach(g=>{const ev=explode.v,d=g.userData.dir;g.position.x=d[0]*ev*2.6;g.position.z=d[1]*ev*2.6;g.position.y=(g.userData.by??g.userData.y)+g.userData.lift*ev;g.rotation.y=g.userData.spin*ev;g.rotation.z=d[0]*ev*.18});roof.position.y=explode.v*(FLOORS*.6);net.scale.setScalar(1+explode.v*.45)}
         const sp=(time*.16)%1;scan.position.y=sp*(FLOORS*STEP);scan.material.opacity=Math.sin(sp*Math.PI)*.45*build.p;
         render();requestAnimationFrame(loop);
       }

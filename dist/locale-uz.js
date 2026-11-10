@@ -114,6 +114,7 @@ const uzTranslations = Object.freeze({
   "Fast Print · Предпринимательство":"Fast Print · Tadbirkorlik",
   "Типография, производство материалов и развитие B2B-продаж для образовательных организаций.":"Bosmaxona, materiallar ishlab chiqarish va ta’lim tashkilotlari uchun B2B savdosini rivojlantirish.",
   "5–7 ЛЕТ":"5–7 YIL",
+  "7+ ЛЕТ":"7+ YIL",
   "Торговля и операционное управление":"Savdo va operatsion boshqaruv",
   "Работа с клиентами, строительными материалами, поставщиками, продажами и повседневными задачами бизнеса.":"Mijozlar, qurilish materiallari, yetkazib beruvchilar, savdo va biznesning kundalik vazifalari bilan ishlash.",
   "Высшее образование · Обучение":"Oliy ta’lim · Tahsil davom etmoqda",

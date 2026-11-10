@@ -718,6 +718,51 @@
       .hold-hint{display:none!important}
       *,*::before,*::after{animation:none!important;transition:none!important}
     }
+
+    /* ---------- V8: business spheres explorer ---------- */
+    .explorer-top{align-items:flex-end;margin-bottom:22px}
+    .explorer-sub{margin:10px 0 0;max-width:520px;font-size:14px;line-height:1.6;color:#a7ada3}
+    .explorer-count{font:500 12px var(--mono);letter-spacing:.12em;color:#7c8378}.explorer-count b{color:var(--lime);font-weight:500;font-size:18px}
+    .explorer-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;padding:0;border:0;background:none;border-radius:0;margin-bottom:28px}
+    .explorer-tabs button{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:16px;height:auto;min-height:92px;padding:14px 14px 16px;border-radius:16px;border:1px solid var(--line-dark);background:rgba(241,238,230,.03);color:#c9cec3;text-align:left;font-size:13px;font-weight:700;line-height:1.25;overflow:hidden;transition:background .35s,border-color .35s,color .35s,transform .35s var(--ease)}
+    .explorer-tabs button:hover{border-color:rgba(205,235,106,.45);color:#fff;transform:translateY(-2px)}
+    .explorer-tabs button[aria-selected="true"]{background:var(--lime);border-color:var(--lime);color:var(--ink)}
+    .tab-svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+    .tab-progress{position:absolute;left:0;bottom:0;height:3px;width:100%;background:rgba(14,19,17,.35);transform:scaleX(0);transform-origin:left}
+    .explorer-tabs button.is-timing .tab-progress{animation:tabfill 7s linear forwards}
+    .explorer.is-paused .explorer-tabs button.is-timing .tab-progress{animation-play-state:paused}
+    @keyframes tabfill{to{transform:scaleX(1)}}
+    .explorer-panel{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);row-gap:22px}
+    .ex-flow-wrap,.ex-metrics{border-radius:20px;border:1px solid var(--line-dark);background:rgba(241,238,230,.03);padding:20px;margin:0}
+    .ex-flow-wrap h4,.ex-metrics h4{margin:0 0 16px;font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#9da397}
+    .ex-flow{display:flex;align-items:center;gap:0}
+    .fl-node{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:8px;max-width:110px;text-align:center}
+    .fl-n{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(205,235,106,.55);font:500 11px var(--mono);color:var(--lime);background:var(--ink);transition:background .4s,color .4s,box-shadow .4s}
+    .fl-label{font-size:12.5px;font-weight:700;color:#e3e7dc;line-height:1.3}
+    .fl-line{flex:1;position:relative;height:2px;margin:0 6px 30px;background:rgba(205,235,106,.22);min-width:20px}
+    .fl-line b{position:absolute;top:-3px;left:0;width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px 2px rgba(205,235,106,.7);opacity:0}
+    .explorer.in-view:not(.is-paused) .fl-line b{animation:flowdot 2.4s linear infinite}
+    .explorer.in-view .fl-line:nth-of-type(2) b{animation-delay:.8s}.explorer.in-view .fl-line:nth-of-type(3) b{animation-delay:1.6s}
+    @keyframes flowdot{0%{left:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{left:calc(100% - 8px);opacity:0}}
+    .explorer.in-view .fl-node:last-child .fl-n{background:var(--lime);color:var(--ink);box-shadow:0 0 0 6px rgba(205,235,106,.12)}
+    .ex-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .kpi{position:relative;padding:12px 12px 10px;border-radius:14px;background:var(--ink);border:1px solid var(--line-dark);display:flex;flex-direction:column;gap:8px;min-height:96px}
+    .kpi span{font-size:12px;font-weight:700;color:#e3e7dc;line-height:1.3}
+    .kpi svg{width:100%;height:30px;margin-top:auto}.kpi polyline{stroke:var(--lime)}
+    .kpi em{position:absolute;right:10px;top:10px;font:500 8.5px var(--mono);font-style:normal;letter-spacing:.1em;color:#6f766b;text-transform:uppercase}
+    .ex-cta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding:13px 16px;border-radius:14px;background:var(--lime);color:var(--ink);font-size:13px;font-weight:800;transition:transform .35s var(--ease),background .3s}
+    .ex-cta:hover{transform:translateY(-2px);background:#dbf38a}.ex-cta b{font-size:16px}
+    @media (max-width:1180px){.explorer-panel{grid-template-columns:1fr}}
+    @media (max-width:900px){.explorer-tabs{grid-template-columns:repeat(5,minmax(132px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}.explorer-tabs::-webkit-scrollbar{display:none}.explorer-tabs button{scroll-snap-align:start;min-height:84px}
+      .explorer-tabs{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(138px,1fr)}}
+    @media (max-width:600px){.explorer-top{flex-direction:column;align-items:flex-start}.ex-flow{flex-wrap:wrap;row-gap:16px}.fl-line{min-width:14px;margin:0 4px 30px}.fl-node{max-width:76px}.fl-label{font-size:11px}.ex-kpis{grid-template-columns:1fr 1fr 1fr;gap:6px}.kpi{padding:10px 8px;min-height:88px}.kpi span{font-size:11px}.kpi em{display:none}.explorer-tabs{grid-auto-columns:minmax(122px,1fr)}}
+    .kpi span{padding-right:34px}
+    @media (max-width:600px){.ex-flow{flex-direction:column;align-items:stretch;row-gap:0}.fl-node{flex-direction:row;max-width:none;text-align:left;gap:12px}.fl-label{font-size:13px}
+      .fl-line{flex:none;width:2px;min-width:0;height:22px;margin:4px 0 4px 20px}.fl-line b{left:-3px;top:0}
+      .explorer.in-view:not(.is-paused) .fl-line b{animation-name:flowdotv}
+      .kpi span{padding-right:0}.ex-chart text{font-size:16px}.ex-chart .val{font-size:15px}}
+    @keyframes flowdotv{0%{top:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:calc(100% - 8px);opacity:0}}
+    @media (prefers-reduced-motion:reduce){.fl-line b{display:none}}
   </style>
 </head>
 <body>
@@ -843,15 +888,19 @@
       </div>
 
       <div class="explorer">
-        <div class="explorer-top"><span class="explorer-label">Сферы бизнеса</span>
+        <div class="explorer-top"><div><span class="explorer-label">Сферы бизнеса</span><p class="explorer-sub">Выберите свою сферу — покажу типичные проблемы, решения и то, что увидит владелец.</p></div><span class="explorer-count"><b id="exIdx">01</b> / 10</span></div>
           <div class="explorer-tabs" role="tablist" aria-label="Сферы бизнеса">
-            <button type="button" role="tab" id="tab-sto" aria-controls="explorerPanel" aria-selected="true" data-industry="sto"><span class="tab-ico" aria-hidden="true">⚙</span>СТО</button>
-            <button type="button" role="tab" id="tab-shop" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="shop"><span class="tab-ico" aria-hidden="true">▤</span>Магазины</button>
-            <button type="button" role="tab" id="tab-cafe" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="cafe"><span class="tab-ico" aria-hidden="true">☕</span>Кафе и рестораны</button>
-            <button type="button" role="tab" id="tab-dist" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="dist"><span class="tab-ico" aria-hidden="true">⛟</span>Дистрибуция</button>
-            <button type="button" role="tab" id="tab-service" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="service"><span class="tab-ico" aria-hidden="true">◎</span>Услуги и офис</button>
+            <button type="button" role="tab" id="tab-sto" aria-controls="explorerPanel" aria-selected="true" data-industry="sto"><svg class="tab-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L4 17l3 3 5.2-5.2a4 4 0 0 0 5.3-5.3l-2.6 2.6-2.4-.6-.6-2.4z"/></svg><span class="tab-name">СТО</span><i class="tab-progress" aria-hidden="true"></i></button>
+            <button type="button" role="tab" id="tab-shop" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="shop"><svg class="tab-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="tab-name">Магазины</span><i class="tab-progress" aria-hidden="true"></i></button>
+            <button type="button" role="tab" id="tab-cafe" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="cafe"><svg class="tab-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3v3M11 3v3"/></svg><span class="tab-name">Кафе и рестораны</span><i class="tab-progress" aria-hidden="true"></i></button>
+            <button type="button" role="tab" id="tab-dist" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="dist"><svg class="tab-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><span class="tab-name">Дистрибуция</span><i class="tab-progress" aria-hidden="true"></i></button>
+            <button type="button" role="tab" id="tab-service" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="service"><svg class="tab-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18"/></svg><span class="tab-name">Услуги и офис</span><i class="tab-progress" aria-hidden="true"></i></button>
+            <button type="button" role="tab" id="tab-build" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="build"><svg class="tab-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M10 21v-6h4v6"/></svg><span class="tab-name">Стройка и ремонт</span><i class="tab-progress" aria-hidden="true"></i></button>
+            <button type="button" role="tab" id="tab-beauty" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="beauty"><svg class="tab-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M8.5 15.5 19 4M15.5 15.5 5 4"/></svg><span class="tab-name">Салоны и барбершопы</span><i class="tab-progress" aria-hidden="true"></i></button>
+            <button type="button" role="tab" id="tab-clinic" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="clinic"><svg class="tab-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></svg><span class="tab-name">Клиники</span><i class="tab-progress" aria-hidden="true"></i></button>
+            <button type="button" role="tab" id="tab-edu" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="edu"><svg class="tab-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg><span class="tab-name">Учебные центры</span><i class="tab-progress" aria-hidden="true"></i></button>
+            <button type="button" role="tab" id="tab-hotel" aria-controls="explorerPanel" aria-selected="false" tabindex="-1" data-industry="hotel"><svg class="tab-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18V8M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/></svg><span class="tab-name">Отели</span><i class="tab-progress" aria-hidden="true"></i></button>
           </div>
-        </div>
         <div class="explorer-panel" id="explorerPanel" role="tabpanel" aria-labelledby="tab-sto">
           <div class="ex-copy">
             <h3 id="exTitle">СТО и автосервис</h3>
@@ -859,12 +908,18 @@
               <div><h4>Типичные проблемы</h4><ul class="ex-list ex-problems" id="exProblems"></ul></div>
               <div><h4>Что внедряю</h4><ul class="ex-list ex-solutions" id="exSolutions"></ul></div>
             </div>
-            <div class="ex-metrics"><h4>Что видит владелец</h4><div class="ex-chips" id="exMetrics"></div></div>
           </div>
           <div class="ex-dash">
             <div class="dash-head"><span class="dash-title" id="exChartTitle"></span><span class="dash-tag">Пример дашборда · демо-данные</span></div>
             <svg class="ex-chart" id="exChart" viewBox="0 0 520 280" role="img" aria-labelledby="exChartTitle"></svg>
             <div class="dash-legend" id="exLegend"></div>
+          </div>
+          <div class="ex-flow-wrap">
+            <h4>Как это работает</h4>
+            <div class="ex-flow" id="exFlow"></div>
+          </div>
+          <div class="ex-metrics"><h4>Что видит владелец</h4><div class="ex-kpis" id="exMetrics"></div>
+            <a class="ex-cta" href="https://t.me/ministr_009" target="_blank" rel="noopener noreferrer"><span>Обсудить внедрение для моей сферы</span><b aria-hidden="true">↗</b></a>
           </div>
         </div>
       </div>
@@ -1271,11 +1326,16 @@
     /* ---------- Industry explorer ---------- */
     const DAYS=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
     const industries={
-      sto:{title:'СТО и автосервис',problems:['Записи теряются в звонках и мессенджерах','Непонятна загрузка постов и мастеров','Клиенты не возвращаются на плановое ТО'],solutions:['Онлайн-запись и Telegram-бот с напоминаниями','QR на авто: история ремонтов и статус работ','Дашборд загрузки постов, выручки и запчастей'],metrics:['Загрузка постов','Средний чек','Повторные визиты'],chart:{type:'bars',title:'Загрузка постов по дням',labels:DAYS,values:[62,78,85,70,92,96,48],unit:'%'}},
-      shop:{title:'Магазины и розница',problems:['Остатки считаются вручную','Нет понятной картины продаж по товарам','Акции запускаются наугад'],solutions:['Учёт товаров, остатков и продаж в одной системе','QR-ценники и QR-каталог с наличием','ABC-аналитика: что продаётся, а что лежит'],metrics:['Оборачиваемость','Маржа','Средний чек'],chart:{type:'bars2',title:'Продажи и остатки по категориям',labels:['Напитки','Бакалея','Молочка','Снеки','Быт. химия'],series:[{name:'Продажи',values:[82,64,71,55,30]},{name:'Остатки',values:[40,58,35,62,80]}]}},
-      cafe:{title:'Кафе и рестораны',problems:['Очереди и ошибки в заказах','Официанты перегружены в часы пик','Меню и цены сложно обновлять'],solutions:['QR-меню на RU/UZ с фото и ценами','Заказ с телефона гостя прямо на кухню','Статусы заказа, оплата и отзыв по QR'],metrics:['Заказы по часам','Время отдачи','Средний чек'],chart:{type:'line',title:'QR-заказы по часам',labels:['10:00','12:00','14:00','16:00','18:00','20:00','22:00'],values:[12,46,38,20,52,74,40]}},
-      dist:{title:'Дистрибуция и опт',problems:['Нет контроля торговых точек','Заявки приходят в разном виде','Сложно планировать продажи по регионам'],solutions:['CRM для торговых представителей и точек','Приём заявок через Telegram-бот','План, факт и аналитика по клиентам'],metrics:['План / факт','Активные точки','Дебиторка'],chart:{type:'bars2',title:'План и факт по неделям',labels:['Нед 1','Нед 2','Нед 3','Нед 4'],series:[{name:'План',values:[80,80,85,85]},{name:'Факт',values:[72,84,79,90]}]}},
-      service:{title:'Услуги и офис',problems:['Заявки теряются между сотрудниками','Нет единой базы клиентов','Руководитель не видит статус работ'],solutions:['CRM с воронкой и задачами','AI-ассистент для первичных обращений','Отчёты для руководителя в Telegram'],metrics:['Конверсия заявок','Скорость ответа','Нагрузка команды'],chart:{type:'funnel',title:'Воронка заявок',labels:['Заявки','Квалификация','КП','Договор'],values:[100,64,38,22]}}
+      sto:{flow:['Клиент','Telegram-бот','CRM и посты','Отчёт владельцу'],title:'СТО и автосервис',problems:['Записи теряются в звонках и мессенджерах','Непонятна загрузка постов и мастеров','Клиенты не возвращаются на плановое ТО'],solutions:['Онлайн-запись и Telegram-бот с напоминаниями','QR на авто: история ремонтов и статус работ','Дашборд загрузки постов, выручки и запчастей'],metrics:['Загрузка постов','Средний чек','Повторные визиты'],chart:{type:'bars',title:'Загрузка постов по дням',labels:DAYS,values:[62,78,85,70,92,96,48],unit:'%'}},
+      shop:{flow:['Покупатель','QR-каталог','Учёт и касса','ABC-отчёт'],title:'Магазины и розница',problems:['Остатки считаются вручную','Нет понятной картины продаж по товарам','Акции запускаются наугад'],solutions:['Учёт товаров, остатков и продаж в одной системе','QR-ценники и QR-каталог с наличием','ABC-аналитика: что продаётся, а что лежит'],metrics:['Оборачиваемость','Маржа','Средний чек'],chart:{type:'bars2',title:'Продажи и остатки по категориям',labels:['Напитки','Бакалея','Молочка','Снеки','Быт. химия'],series:[{name:'Продажи',values:[82,64,71,55,30]},{name:'Остатки',values:[40,58,35,62,80]}]}},
+      cafe:{flow:['Гость','QR-меню','Кухня','Дашборд'],title:'Кафе и рестораны',problems:['Очереди и ошибки в заказах','Официанты перегружены в часы пик','Меню и цены сложно обновлять'],solutions:['QR-меню на RU/UZ с фото и ценами','Заказ с телефона гостя прямо на кухню','Статусы заказа, оплата и отзыв по QR'],metrics:['Заказы по часам','Время отдачи','Средний чек'],chart:{type:'line',title:'QR-заказы по часам',labels:['10:00','12:00','14:00','16:00','18:00','20:00','22:00'],values:[12,46,38,20,52,74,40]}},
+      dist:{flow:['Торговая точка','Заявка в боте','CRM','План / факт'],title:'Дистрибуция и опт',problems:['Нет контроля торговых точек','Заявки приходят в разном виде','Сложно планировать продажи по регионам'],solutions:['CRM для торговых представителей и точек','Приём заявок через Telegram-бот','План, факт и аналитика по клиентам'],metrics:['План / факт','Активные точки','Дебиторка'],chart:{type:'bars2',title:'План и факт по неделям',labels:['Нед 1','Нед 2','Нед 3','Нед 4'],series:[{name:'План',values:[80,80,85,85]},{name:'Факт',values:[72,84,79,90]}]}},
+      service:{flow:['Заявка','AI-ассистент','CRM','Отчёт'],title:'Услуги и офис',problems:['Заявки теряются между сотрудниками','Нет единой базы клиентов','Руководитель не видит статус работ'],solutions:['CRM с воронкой и задачами','AI-ассистент для первичных обращений','Отчёты для руководителя в Telegram'],metrics:['Конверсия заявок','Скорость ответа','Нагрузка команды'],chart:{type:'funnel',title:'Воронка заявок',labels:['Заявки','Квалификация','КП','Договор'],values:[100,64,38,22]}},
+      build:{flow:['Обмеры','Смета','График и закупки','Отчёт клиенту'],title:'Стройка и ремонт',problems:['Смета расходится с фактом','Сроки срываются из-за материалов','Клиент не видит ход работ'],solutions:['Сметы по помещениям и этапам','График работ и закупок в одной системе','Фотоотчёты и статус для клиента в Telegram'],metrics:['Смета / факт','Сроки этапов','Маржа объекта'],chart:{type:'bars2',title:'Смета и факт по этапам',labels:['Демонтаж','Черновые','Инженерия','Чистовые','Мебель'],series:[{name:'Смета',values:[40,72,64,80,52]},{name:'Факт',values:[38,78,61,86,49]}]}},
+      beauty:{flow:['Клиент','Mini App','Расписание','Возврат клиента'],title:'Салоны красоты и барбершопы',problems:['Пустые окна в расписании','Клиенты записываются через переписку','Нет напоминаний и повторных визитов'],solutions:['Онлайн-запись и Telegram Mini App','Напоминания и возврат клиентов','Загрузка мастеров и средний чек'],metrics:['Заполненность','Возвраты клиентов','Средний чек'],chart:{type:'line',title:'Записи по дням',labels:DAYS,values:[38,52,47,60,84,96,70]}},
+      clinic:{flow:['Пациент','Онлайн-запись','Врач','Напоминание'],title:'Клиники и медцентры',problems:['Очереди и звонки на ресепшене','Пропуски приёмов','Нет картины загрузки врачей'],solutions:['Онлайн-запись на RU/UZ','Напоминания пациентам в Telegram','Дашборд загрузки врачей и услуг'],metrics:['Загрузка врачей','Неявки','Повторные приёмы'],chart:{type:'bars',title:'Загрузка врачей по дням',labels:DAYS,values:[74,82,79,88,91,64,30],unit:'%'}},
+      edu:{flow:['Заявка','Пробный урок','Группа','Отчёт родителям'],title:'Учебные центры',problems:['Заявки теряются после пробного урока','Оплаты отслеживаются вручную','Родители не видят прогресс'],solutions:['CRM для заявок и групп','Напоминания об оплате в Telegram','Отчёты об успеваемости для родителей'],metrics:['Конверсия пробных','Оплаты','Удержание'],chart:{type:'funnel',title:'Путь ученика',labels:['Заявка','Пробный урок','Оплата','Продление'],values:[100,58,36,27]}},
+      hotel:{flow:['Гость','QR в номере','Персонал','Отзыв'],title:'Отели и гостиницы',problems:['Гости звонят на ресепшен по каждой мелочи','Нет обратной связи после выезда','Загрузку номеров сложно планировать'],solutions:['QR в номере: услуги, меню, Wi-Fi','Заказы в номер и заявки персоналу','QR-отзывы и дашборд загрузки'],metrics:['Загрузка номеров','Заказы в номер','Оценки гостей'],chart:{type:'line',title:'Загрузка номеров по дням',labels:DAYS,values:[55,58,62,70,88,94,76]}}
     };
     let currentIndustry='sto';
     const SVGNS='http://www.w3.org/2000/svg';
@@ -1320,17 +1380,31 @@
       document.getElementById('exTitle').textContent=translate(d.title);
       const fill=(id,arr)=>document.getElementById(id).replaceChildren(...arr.map(v=>{const li=document.createElement('li');li.textContent=translate(v);return li}));
       fill('exProblems',d.problems);fill('exSolutions',d.solutions);
-      document.getElementById('exMetrics').replaceChildren(...d.metrics.map(v=>{const s=document.createElement('span');s.textContent=translate(v);return s}));
+      document.getElementById('exMetrics').replaceChildren(...d.metrics.map((v,mi)=>{const t=document.createElement('div');t.className='kpi';const lab=document.createElement('span');lab.textContent=translate(v);
+        let h=0;for(const ch of v+currentIndustry)h=(h*31+ch.charCodeAt(0))>>>0;const pts=[];let y=14+(h%10);for(let k=0;k<9;k++){h=(h*1103515245+12345)>>>0;y=Math.max(4,Math.min(26,y+((h>>16)%9)-4+(k>5?-1:0)));pts.push(`${k*12},${y}`)}
+        t.innerHTML=`<svg viewBox="0 0 96 30" preserveAspectRatio="none" aria-hidden="true"><polyline points="${pts.join(' ')}" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg><em>demo</em>`;t.prepend(lab);return t}));
+      const flow=document.getElementById('exFlow');flow.replaceChildren();
+      d.flow.forEach((v,k)=>{if(k){const ln=document.createElement('i');ln.className='fl-line';ln.innerHTML='<b></b>';flow.append(ln)}const n=document.createElement('div');n.className='fl-node';n.innerHTML=`<span class="fl-n">0${k+1}</span>`;const lab=document.createElement('span');lab.className='fl-label';lab.textContent=translate(v);n.append(lab);flow.append(n)});
+      document.getElementById('exIdx').textContent=String(Object.keys(industries).indexOf(currentIndustry)+1).padStart(2,'0');
       document.getElementById('exChartTitle').textContent=translate(d.chart.title);
       drawChart(document.getElementById('exChart'),d.chart,animate);
-      if(animate&&canAnimate())gsap.from('#explorerPanel .ex-copy > *',{y:14,autoAlpha:0,duration:.6,stagger:.06,ease:'power3.out'});
+      if(animate&&canAnimate()){gsap.from('#explorerPanel .ex-copy > *',{y:14,autoAlpha:0,duration:.6,stagger:.06,ease:'power3.out'});
+        gsap.from('#exFlow .fl-node',{y:16,autoAlpha:0,duration:.5,stagger:.09,ease:'back.out(1.8)'});gsap.from('#exFlow .fl-line',{scaleX:0,transformOrigin:'left',duration:.5,stagger:.09,delay:.1});
+        gsap.from('#exMetrics .kpi',{y:16,autoAlpha:0,duration:.5,stagger:.07,ease:'power3.out'});
+        document.querySelectorAll('#exMetrics polyline').forEach(pl=>{const len=pl.getTotalLength();gsap.fromTo(pl,{strokeDasharray:len,strokeDashoffset:len},{strokeDashoffset:0,duration:1.1,ease:'power2.out',delay:.2})})}
     }
     const exTabs=[...document.querySelectorAll('.explorer-tabs [role="tab"]')];
-    function selectIndustry(tab,focus){exTabs.forEach(t=>{const on=t===tab;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1});document.getElementById('explorerPanel').setAttribute('aria-labelledby',tab.id);currentIndustry=tab.dataset.industry;renderExplorer(true);if(focus)tab.focus()}
+    let exAuto=null,exUserPicked=false,exHover=false,exVisible=false;const EX_DELAY=7000;
+    function scheduleAuto(){clearTimeout(exAuto);document.querySelectorAll('.explorer-tabs [role="tab"]').forEach(t=>t.classList.remove('is-timing'));if(exUserPicked||!exVisible||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const cur=document.querySelector('.explorer-tabs [aria-selected="true"]');if(cur){void cur.offsetWidth;cur.classList.add('is-timing')}exAuto=setTimeout(()=>{if(exHover){scheduleAuto();return}const i=exTabs.findIndex(t=>t.getAttribute('aria-selected')==='true');selectIndustry(exTabs[(i+1)%exTabs.length],false,true)},EX_DELAY)}
+    function selectIndustry(tab,focus,auto){if(!auto){exUserPicked=true;clearTimeout(exAuto);exTabs.forEach(t=>t.classList.remove('is-timing'))}exTabs.forEach(t=>{const on=t===tab;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1});document.getElementById('explorerPanel').setAttribute('aria-labelledby',tab.id);currentIndustry=tab.dataset.industry;renderExplorer(true);if(focus)tab.focus();if(auto){const strip=tab.parentElement;if(strip.scrollWidth>strip.clientWidth)strip.scrollTo({left:tab.offsetLeft-20,behavior:'smooth'});scheduleAuto()}}
     exTabs.forEach((t,i)=>{t.addEventListener('click',()=>selectIndustry(t));t.addEventListener('keydown',e=>{let k=null;if(e.key==='ArrowRight')k=(i+1)%exTabs.length;if(e.key==='ArrowLeft')k=(i-1+exTabs.length)%exTabs.length;if(e.key==='Home')k=0;if(e.key==='End')k=exTabs.length-1;if(k!==null){e.preventDefault();selectIndustry(exTabs[k],true)}})});
     renderExplorer(false);
     let explorerSeen=false;
     new IntersectionObserver((en,obs)=>{if(en[0].isIntersecting&&!explorerSeen){explorerSeen=true;renderExplorer(true);obs.disconnect()}},{threshold:.3}).observe(document.getElementById('explorerPanel'));
+    const explorerEl=document.querySelector('.explorer');
+    new IntersectionObserver(([e])=>{exVisible=e.isIntersecting;explorerEl.classList.toggle('in-view',exVisible);if(exVisible)scheduleAuto();else{clearTimeout(exAuto);exTabs.forEach(t=>t.classList.remove('is-timing'))}},{threshold:.35}).observe(explorerEl);
+    explorerEl.addEventListener('pointerenter',()=>{exHover=true;explorerEl.classList.add('is-paused')});explorerEl.addEventListener('pointerleave',()=>{exHover=false;explorerEl.classList.remove('is-paused')});
+    explorerEl.addEventListener('focusin',()=>{exHover=true});explorerEl.addEventListener('focusout',()=>{exHover=false});
 
     /* ---------- QR story ---------- */
     const qrSteps=[...document.querySelectorAll('.qr-step')],qrScreens=[...document.querySelectorAll('.screen')],qrDots=[...document.querySelectorAll('.qr-progress i')];

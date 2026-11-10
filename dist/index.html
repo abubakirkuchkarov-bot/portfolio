@@ -1426,6 +1426,7 @@
              .from('.hero-summary,.hero-actions',{y:24,autoAlpha:0,duration:1,stagger:.1},.45)
              .from('.hero-badge',{y:20,autoAlpha:0,duration:.9,stagger:.12},.7)
              .from('.hero-bottom',{autoAlpha:0,duration:.8},.8);
+        window.__intro=intro;
         const playIntro=()=>{if(window.__introStarted)return;window.__introStarted=true;root.classList.remove('motion');intro.play();document.dispatchEvent(new Event('intro:start'))};
         /* Loader: the AK mark draws itself, then the curtain lifts */
         const loader=document.getElementById('loader');
@@ -1535,7 +1536,12 @@
       mm.add('(prefers-reduced-motion: reduce)',()=>{gsap.set('[data-hero]',{visibility:'visible'});root.classList.remove('motion')});
     });
     addEventListener('load',()=>{if(window.ScrollTrigger)ScrollTrigger.refresh()});
-    setTimeout(()=>{document.documentElement.classList.remove('motion');const l=document.getElementById('loader');if(l&&!window.__introStarted)l.remove()},4500);
+    setTimeout(()=>{
+      /* Safety net: if animation frames are paused (background tab, hidden pane), show the final state instead of a blank hero */
+      const stalled=!window.gsap||gsap.ticker.frame<20;
+      if(stalled||!window.__introStarted){document.documentElement.classList.remove('motion');const l=document.getElementById('loader');if(l)l.remove();window.__introStarted=true;
+        if(window.__intro)window.__intro.progress(1);document.querySelectorAll('[data-hero],[data-hero-line]').forEach(e=>e.style.visibility='visible');document.dispatchEvent(new Event('intro:start'))}
+    },5000);
   </script>
 
   <!-- Three.js hero scene: an architectural frame assembled floor by floor, wrapped in a quiet data network -->

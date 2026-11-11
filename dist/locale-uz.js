@@ -586,5 +586,19 @@ const uzTranslations = Object.freeze({
   "Загрузка номеров":"Xonalar bandligi",
   "Заказы в номер":"Xonaga buyurtmalar",
   "Оценки гостей":"Mehmonlar bahosi",
-  "Загрузка номеров по дням":"Kunlar bo‘yicha xonalar bandligi"
+  "Загрузка номеров по дням":"Kunlar bo‘yicha xonalar bandligi",
+  // V8 — facets
+  "Четыре направления":"To‘rt yo‘nalish",
+  "Одна система —":"Bitta tizim —",
+  "четыре грани.":"to‘rt qirra.",
+  "Стройка, продажи, цифровые продукты и QR-автоматизация усиливают друг друга: опыт в одном направлении делает сильнее остальные.":"Qurilish, savdo, raqamli mahsulotlar va QR-avtomatlashtirish bir-birini kuchaytiradi: bir yo‘nalishdagi tajriba qolganlarini yanada kuchli qiladi.",
+  "Грани":"Qirralar",
+  "Прокрутка поворачивает следующую грань":"Aylantirish keyingi qirrani buradi",
+  "Ремонт квартир и домов, организация строительных работ — от первого запроса до готового результата.":"Xonadon va uylarni ta’mirlash, qurilish ishlarini tashkil etish — birinchi so‘rovdan tayyor natijagacha.",
+  "Продажи и управление":"Savdo va boshqaruv",
+  "Региональный менеджер Rulexx и 7+ лет в торговле. Строю отделы продаж и навожу порядок в процессах.":"Rulexx mintaqaviy menejeri va savdoda 7+ yillik tajriba. Savdo bo‘limlarini quraman va jarayonlarda tartib o‘rnataman.",
+  "Цифровые продукты":"Raqamli mahsulotlar",
+  "Сайты, CRM, Telegram-боты и AI-агенты, которые решают реальные задачи бизнеса.":"Biznesning haqiqiy vazifalarini hal qiladigan saytlar, CRM, Telegram botlar va AI agentlar.",
+  "QR и автоматизация":"QR va avtomatlashtirish",
+  "От QR-меню до получения заказа, отчёты владельцу и автоматизация рутины.":"QR-menyudan buyurtmani olishgacha, egasi uchun hisobotlar va takroriy ishlarni avtomatlashtirish."
 });

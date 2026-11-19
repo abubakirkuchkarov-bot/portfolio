@@ -822,6 +822,17 @@
       .kpi span{padding-right:0}.ex-chart text{font-size:16px}.ex-chart .val{font-size:15px}}
     @keyframes flowdotv{0%{top:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:calc(100% - 8px);opacity:0}}
     @media (prefers-reduced-motion:reduce){.fl-line b{display:none}}
+    /* ===== V9 — premium polish layer (additive; every motion piece is off under prefers-reduced-motion) ===== */
+    ::selection{background:var(--lime);color:var(--ink)}
+    html{-webkit-tap-highlight-color:transparent}
+    .h2,.facets h2{text-wrap:balance}
+    p,.section-side{text-wrap:pretty}
+    .js.motion .kicker::before{transform:scaleX(0);transition:transform .9s var(--ease) .1s}
+    .js.motion .kicker.is-drawn::before{transform:none}
+    .spot{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .45s var(--ease);background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,248,226,.20),rgba(205,235,106,.07) 38%,transparent 68%);mix-blend-mode:soft-light}
+    .spot.on{opacity:1}
+    .skill-card .spot{background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(205,235,106,.16),rgba(185,153,106,.06) 40%,transparent 70%);mix-blend-mode:screen}
+    @media (prefers-reduced-motion: reduce){.spot{display:none}}
   </style>
 </head>
 <body>
@@ -1965,6 +1976,50 @@ ai.ask("what sold best?");</span><h3>Цифровые продукты</h3><p>С
       if(reduce)render();else requestAnimationFrame(loop);
       host.classList.add('is-ready');
     }
+  })();
+  </script>
+  <script>
+  /* V9 — polish layer: scroll progress, pointer spotlight, prism tilt, kicker rules. Self-contained, no text is touched (RU/UZ safe). */
+  (()=>{
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const safe=fn=>{try{fn()}catch(e){}};
+
+    /* 1. kicker rules draw in once when they enter the viewport */
+    safe(()=>{
+      const ks=[...document.querySelectorAll('.kicker')];if(!ks.length)return;
+      if(reduce||!('IntersectionObserver' in window)){ks.forEach(k=>k.classList.add('is-drawn'));return}
+      const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-drawn');io.unobserve(e.target)}}),{rootMargin:'0px 0px -12% 0px'});
+      ks.forEach(k=>io.observe(k));
+      setTimeout(()=>ks.forEach(k=>k.classList.add('is-drawn')),9000); /* safety net */
+    });
+
+    if(reduce||!fine)return; /* everything below is pointer-driven desktop polish */
+
+    /* 3. soft light that follows the pointer on project covers and skill cards */
+    safe(()=>{
+      document.querySelectorAll('.cover,.skill-card').forEach(card=>{
+        const s=document.createElement('i');s.className='spot';s.setAttribute('aria-hidden','true');card.appendChild(s);
+        let raf=0,x=0,y=0;
+        card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect();x=e.clientX-r.left;y=e.clientY-r.top;if(!raf)raf=requestAnimationFrame(()=>{raf=0;s.style.setProperty('--mx',x+'px');s.style.setProperty('--my',y+'px')})},{passive:true});
+        card.addEventListener('pointerenter',()=>s.classList.add('on'));
+        card.addEventListener('pointerleave',()=>s.classList.remove('on'));
+      });
+    });
+
+    /* 4. gentle 3D tilt of the facets prism stage toward the pointer */
+    safe(()=>{
+      const stage=document.querySelector('.prism-stage');if(!stage)return;
+      const init=()=>{
+        if(!window.gsap)return setTimeout(init,200);
+        gsap.set(stage,{transformPerspective:1600});
+        const rx=gsap.quickTo(stage,'rotationX',{duration:.9,ease:'power3.out'}),ry=gsap.quickTo(stage,'rotationY',{duration:.9,ease:'power3.out'});
+        const host=stage.closest('.facets-inner')||stage;
+        host.addEventListener('pointermove',e=>{const r=stage.getBoundingClientRect();ry(((e.clientX-r.left)/r.width-.5)*7);rx(-((e.clientY-r.top)/r.height-.5)*5)},{passive:true});
+        host.addEventListener('pointerleave',()=>{rx(0);ry(0)});
+      };
+      init();
+    });
   })();
   </script>
 </body>
